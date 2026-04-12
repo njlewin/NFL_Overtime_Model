@@ -1,7 +1,10 @@
 import pandas as pd
 import numpy as np
 
-def select_drive(drive_list: pd.DataFrame, yardline: float, time_remaining: float, score_diff: float) -> pd.Series:
+from simulation.rules import overtime_length
+
+
+def select_drive(drive_list: pd.DataFrame, yardline: float, time_remaining: float, score_diff: float, season) -> pd.Series:
     """
     Given a list of historical drives and a game situation, returns a
     randomly sampled drive from the top 5% most similar historical drives.
@@ -15,7 +18,7 @@ def select_drive(drive_list: pd.DataFrame, yardline: float, time_remaining: floa
     df = drive_list.copy()
     # --- Normalization constants ---
     MAX_YARDLINE = 99.0
-    MAX_TIME = 600.0  # 10 min OT period
+    MAX_TIME = overtime_length(season)  # 10 min OT period
     MAX_SCORE_DIFF = 7.0
     TIME_LAMBDA = 0.004  # controls how aggressively late-game time is weighted
 
