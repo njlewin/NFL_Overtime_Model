@@ -76,17 +76,24 @@ def aggregate_kos(pbp_df):
     kickoff_results = pd.DataFrame({
         'game_id': pbp_df.loc[valid_kick, 'game_id'],
         'play_id': pbp_df.loc[valid_kick, 'play_id'].astype(str),
+        'season': pbp_df.loc[valid_kick, 'game_id'].str[:4],
         'return_touchdown': pbp_df.loc[valid_kick, 'return_touchdown'].values,
         'starting_field_position': pbp_df.loc[valid_next, 'yardline_100'].values
     }).dropna()
 
-    kickoff_results.to_csv('kickoff_results.csv', index=False)
+    kickoff_results.to_csv('ko_list.csv', index=False)
     print('Kickoffs aggregated')
     return kickoff_results
 
-if __name__ == "__main__":
-    look_back = 10
-    most_recent_season = 2025
+def aggregate_conversions(pbp_df):
+    eps = pbp_df['extra_point_result'].value_counts()
+    tpcs = pbp_df['two_point_conv_result'].value_counts()
+    pd.DataFrame({
+        'extra_point_percentage': [eps['good']/sum(eps)],
+        'two_point_percentage':[tpcs['success']/sum(tpcs)],
+    }).to_csv('conversion_rates.csv', index=False)
+
+def import_pbp_data (most_recent_season = 2025, look_back = 10):
     # Import nfl play by play data for the last 10 years.
     file_name = 'pbp_data.pkl'
     if not os.path.isfile(file_name):
@@ -96,6 +103,12 @@ if __name__ == "__main__":
     else:
         pbp_df = pd.read_pickle(file_name)
         print("Loaded pbp data")
+    return pbp_df
 
+if __name__ == "__main__":
+
+    pbp_df = import_pbp_data()
+    aggregate_drives(pbp_df)
     aggregate_kos(pbp_df)
+    aggregate_conversions(pbp_df)
 
