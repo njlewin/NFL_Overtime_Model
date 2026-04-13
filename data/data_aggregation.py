@@ -95,7 +95,7 @@ def aggregate_conversions(pbp_df):
     print('Aggregated extra-point and two-point conversion rates.')
 
 def import_pbp_data (most_recent_season = 2025, look_back = 10, force_refresh = False):
-    # Import nfl play by play data for the last 10 years.
+    # Import nfl play by play data.
     file_name = 'pbp_data.pkl'
     if not os.path.isfile(file_name) or force_refresh:
         pbp_df = nfl.import_pbp_data(years=[most_recent_season - i for i in range(look_back)], downcast=True)
@@ -117,7 +117,7 @@ def aggregate_fourth_down_attempts(pbp_df):
     print('Fourth down attempts aggregated')
 
 if __name__ == "__main__":
-    pbp_df = import_pbp_data(most_recent_season = 2025, look_back = 20, force_refresh = True)
+    pbp_df = import_pbp_data(most_recent_season = 2025, look_back = 20, force_refresh = False)
     aggregate_drives(pbp_df)
     aggregate_kos(pbp_df)
     aggregate_conversions(pbp_df)

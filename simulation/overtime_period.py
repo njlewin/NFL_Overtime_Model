@@ -7,13 +7,14 @@ import pandas as pd
 import numpy as np
 import random
 from pathlib import Path
-from drive_selection import select_drive
-from rules import game_over, overtime_length
+from simulation.drive_selection import select_drive
+from simulation.rules import game_over, overtime_length
 import time
 from multiprocessing import Pool, cpu_count
 
 DATA_DIR = Path(r"C:\Users\natel\PycharmProjects\NFL_Overtime_Model\data")
 drive_list = pd.read_csv(DATA_DIR / "drive_list.csv")
+drive_list['season'] = drive_list['drive_id'].str[:4].astype(int)
 ko_list = pd.read_csv(DATA_DIR / "ko_list.csv")
 conversion_rates = pd.read_csv(DATA_DIR / "conversion_rates.csv").T[0].to_dict()
 fourth_downs = pd.read_csv(DATA_DIR / "fourth_down_attempts.csv")
@@ -168,14 +169,14 @@ class Overtime_Period:
         self.yardline = min(max(start_yardline + attempt['yards_gained'], 1), 99)
 
         if attempt['off_td'] == 1:
-            self.score_touchdown()
             self.summary += f'{self.teams[self.posteam]} went for it on fourth down and scored a touchdown.\n'
+            self.score_touchdown()
         elif attempt['def_td'] == 1:
             self.switch_posteam()
             self.had_possession[self.posteam] = True
-            self.score_touchdown()
             self.summary += (f'{self.teams[self.posteam]} went for it on fourth down, turned it over and '
                              f'{self.teams[int(not self.posteam)]} scored a touchdown.\n')
+            self.score_touchdown()
         elif attempt['fourth_down_failed'] == 1:
             self.summary += f'{self.teams[self.posteam]} went for it and failed on fourth down.\n'
             self.switch_posteam()
@@ -300,9 +301,8 @@ def run_simulation(args):
 if __name__ == '__main__':
     start = time.time()
     n = 10000
-    season = 2023
+    season = 2024
     go_for_ties = True
-
     with Pool(cpu_count()) as pool:
         results = pool.map(run_simulation, [(season, go_for_ties)] * n)
     result_df = pd.DataFrame(results)

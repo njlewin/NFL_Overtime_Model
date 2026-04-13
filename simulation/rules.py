@@ -48,6 +48,6 @@ def game_over_pre2012(ot) -> bool:
 
 def overtime_length(year):
     if year <=2016:
-        return 60*15
+        return 60*10
     else:
         return 60*10
