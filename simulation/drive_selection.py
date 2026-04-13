@@ -15,7 +15,6 @@ def select_drive(drive_list: pd.DataFrame, yardline: float, time_remaining: floa
       - Score differential
     """
 
-    df = drive_list.copy()
     # --- Normalization constants ---
     MAX_YARDLINE = 99.0
     MAX_TIME = overtime_length(season)  # 10 min OT period
@@ -30,23 +29,23 @@ def select_drive(drive_list: pd.DataFrame, yardline: float, time_remaining: floa
     RETURN_COUNT = 15
 
     # --- Compute deltas (normalized) ---
-    d_yardline = (df["start_yardline"] - yardline) / MAX_YARDLINE
-    d_time = (df["start_time_left"] - time_remaining) / MAX_TIME
-    d_score = (df["start_score_diff"] - score_diff) / MAX_SCORE_DIFF
+    d_yardline = (drive_list["start_yardline"] - yardline) / MAX_YARDLINE
+    d_time = (drive_list["start_time_left"] - time_remaining) / MAX_TIME
+    d_score = (drive_list["start_score_diff"] - score_diff) / MAX_SCORE_DIFF
 
     # --- Non-linear time sensitivity ---
     # Grows exponentially as time_remaining approaches 0
     time_sensitivity = np.exp(TIME_LAMBDA * (MAX_TIME - time_remaining))
 
     # --- Weighted Euclidean distance ---
-    df["_distance"] = np.sqrt(
+    distances = np.sqrt(
         W_YARDLINE * d_yardline ** 2 +
         W_TIME * time_sensitivity * d_time ** 2 +
         W_SCORE * d_score ** 2
     )
 
     # --- Select top 1 closest drives and sample ---
-    candidates = df.nsmallest(RETURN_COUNT, "_distance")
+    top15_idx = distances.nsmallest(RETURN_COUNT).index
 
     # --- Random sample from candidates ---
-    return candidates.drop(columns="_distance").sample(n=1).iloc[0]
+    return drive_list.loc[top15_idx].sample(1).iloc[0]

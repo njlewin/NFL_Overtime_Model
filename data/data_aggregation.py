@@ -1,7 +1,6 @@
 import pandas as pd
 import nfl_data_py as nfl
 import os
-import duckdb
 
 def aggregate_drives(pbp_df):
     # Filter plays
@@ -15,7 +14,7 @@ def aggregate_drives(pbp_df):
         'yardline_100', 'game_seconds_remaining',
         'posteam_score', 'defteam_score',
         'posteam_score_post', 'defteam_score_post',
-        'drive_end_transition'
+        'drive_end_transition', 'ydstogo'
     ]
     df = df[cols_needed]
 
@@ -24,7 +23,7 @@ def aggregate_drives(pbp_df):
 
     group = df.groupby(['game_id', 'drive'])
 
-    # First and last play of each drive — no loops needed
+    # First and last play of each drive
     first = group.first().add_prefix('first_')
     last  = group.last().add_prefix('last_')
     drives = pd.concat([first, last], axis=1).reset_index()
@@ -43,6 +42,7 @@ def aggregate_drives(pbp_df):
     drives['posteam_score_change']  = drives['last_posteam_score_post']  - drives['first_posteam_score']
     drives['defteam_score_change']  = drives['last_defteam_score_post']  - drives['first_defteam_score']
     drives['last_play_yardline']    = drives['last_yardline_100']
+    drives['last_play_ydstogo']   = drives['last_ydstogo']
     # get the yard line from the next drive to record what the next starting yardline is
     drives = drives.sort_values(['game_id', 'drive'])
     drives['next_drive_start_yardline'] = (
@@ -57,7 +57,7 @@ def aggregate_drives(pbp_df):
         'drive_id', 'start_yardline', 'start_time_left',
         'start_posteam_score', 'start_defteam_score', 'start_score_diff', 'drive_result',
         'time_elapsed', 'defteam_TD','posteam_score_change', 'defteam_score_change', 'last_play_yardline',
-        'next_drive_start_yardline'
+        'last_ydstogo', 'next_drive_start_yardline'
     ]
     drives[output_cols].to_csv('drive_list.csv', index=False)
     print('Drives aggregated')
@@ -105,10 +105,17 @@ def import_pbp_data (most_recent_season = 2025, look_back = 10):
         print("Loaded pbp data")
     return pbp_df
 
-if __name__ == "__main__":
+def aggregate_fourth_down_attempts(pbp_df):
+    df = pbp_df[(pbp_df['fourth_down_converted']==1) | (pbp_df['fourth_down_failed'] ==1)].copy()
+    df['off_td'] = df['posteam'] == df['td_team']
+    df['def_td'] = df['defteam'] == df['td_team']
+    cols = ['fourth_down_converted', 'fourth_down_failed', 'yardline_100','ydstogo', 'yards_gained', 'off_td', 'def_td']
 
+    df[cols].to_csv('fourth_down_attempts.csv', index=False)
+
+if __name__ == "__main__":
     pbp_df = import_pbp_data()
     aggregate_drives(pbp_df)
     aggregate_kos(pbp_df)
     aggregate_conversions(pbp_df)
-
+    aggregate_fourth_down_attempts(pbp_df)

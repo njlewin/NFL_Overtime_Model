@@ -17,7 +17,7 @@ def game_over(ot: Overtime_Period):
 def game_over_post2025(ot: Overtime_Period):
     if ot.time_remaining <= 0:
         return True
-    elif sum(ot.had_possession)== 2 and ot.score[0] != ot.score[1]:
+    elif all(ot.had_possession) and ot.score[0] != ot.score[1]:
         return True
     elif ot.safety_scored:
         return True
