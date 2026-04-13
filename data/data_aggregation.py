@@ -38,7 +38,6 @@ def aggregate_drives(pbp_df):
     drives['drive_result']          = drives['first_drive_end_transition']
     drives['time_elapsed']          = drives['first_game_seconds_remaining'] - drives['last_game_seconds_remaining']
     drives['defteam_TD']            = drives['first_defteam_score'] != drives['last_defteam_score']
-    # TODO add in conditions if a turnover and score or remove score? No need to add Interception Returned for TD
     drives['posteam_score_change']  = drives['last_posteam_score_post']  - drives['first_posteam_score']
     drives['defteam_score_change']  = drives['last_defteam_score_post']  - drives['first_defteam_score']
     drives['last_play_yardline']    = drives['last_yardline_100']
@@ -93,10 +92,12 @@ def aggregate_conversions(pbp_df):
         'two_point_percentage':[tpcs['success']/sum(tpcs)],
     }).to_csv('conversion_rates.csv', index=False)
 
-def import_pbp_data (most_recent_season = 2025, look_back = 10):
+    print('Aggregated extra-point and two-point conversion rates.')
+
+def import_pbp_data (most_recent_season = 2025, look_back = 10, force_refresh = False):
     # Import nfl play by play data for the last 10 years.
     file_name = 'pbp_data.pkl'
-    if not os.path.isfile(file_name):
+    if not os.path.isfile(file_name) or force_refresh:
         pbp_df = nfl.import_pbp_data(years=[most_recent_season - i for i in range(look_back)], downcast=True)
         pbp_df.to_pickle(file_name)
         print("Wrote pbp file")
@@ -113,8 +114,10 @@ def aggregate_fourth_down_attempts(pbp_df):
 
     df[cols].to_csv('fourth_down_attempts.csv', index=False)
 
+    print('Fourth down attempts aggregated')
+
 if __name__ == "__main__":
-    pbp_df = import_pbp_data()
+    pbp_df = import_pbp_data(most_recent_season = 2025, look_back = 20, force_refresh = True)
     aggregate_drives(pbp_df)
     aggregate_kos(pbp_df)
     aggregate_conversions(pbp_df)

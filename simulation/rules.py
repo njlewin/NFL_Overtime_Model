@@ -10,7 +10,7 @@ def game_over(ot: Overtime_Period):
         return game_over_post2025(ot)
     elif ot.season >= 2012:
         return game_over_2012_2024(ot)
-    elif ot.season <2012:
+    elif ot.season < 2012:
         return game_over_pre2012(ot)
     else: return ot.time_remaining <=0
 
@@ -29,7 +29,7 @@ def game_over_2012_2024(ot) -> bool:
         return True
     elif ot.safety_scored:
         return True
-    # Regular season: TD on first possession wins immediately
+    # TD on first possession wins immediately
     elif any(ot.scored_TD):
         return True
     # After both possess, any score difference wins
