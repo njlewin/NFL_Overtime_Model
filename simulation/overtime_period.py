@@ -198,7 +198,9 @@ class Overtime_Period:
         self.drive_count[self.posteam] += 1
         score_diff = self.score[self.posteam] - self.score[int(not self.posteam)]
 
-        drive = select_drive(drive_list, self.yardline, self.time_remaining, score_diff, self.season)
+        earliest_year = max(drive_list['season'].min(), self.season - 10)
+        drive, candidates = select_drive(drive_list[drive_list['season'].isin(range(earliest_year, self.season+1))],
+                                         self.yardline, self.time_remaining, score_diff, self.season)
         self.time_remaining = max(0, self.time_remaining - drive['time_elapsed'])
 
         if drive['drive_result'] == 'PUNT':
@@ -279,7 +281,7 @@ class Overtime_Period:
             "Team 1 Scoring": self.scores[1],
             "Team 0 Drives": self.drive_count[0],
             "Team 1 Drives": self.drive_count[1],
-            "time_remaining": self.time_remaining,
+            "Time Remaining": self.time_remaining,
             "OT Summary": self.summary,
         }
 
@@ -300,13 +302,21 @@ def run_simulation(args):
 
 if __name__ == '__main__':
     start = time.time()
-    n = 10000
-    season = 2024
-    go_for_ties = True
+    n = 1000
+    seasons = [2025]
+    go_for_ties = False
+
+    all_dfs = []
     with Pool(cpu_count()) as pool:
-        results = pool.map(run_simulation, [(season, go_for_ties)] * n)
-    result_df = pd.DataFrame(results)
-    result_df.to_csv(f'overtime_{season}{'_agg' if not go_for_ties else ''}.csv')
-    print(result_df['Winning Team'].value_counts())
+        for season in seasons:
+            results = pool.map(run_simulation, [(season, go_for_ties)] * n)
+            df = pd.DataFrame(results)
+            df['Season'] = season
+            all_dfs.append(df)
+
+    result_df = pd.concat(all_dfs, ignore_index=True)
+    result_df.to_csv(f'overtime_{"_".join(map(str, seasons))}{"_agg" if not go_for_ties else ""}.csv')
+    pivot_df = result_df.groupby('Season')['Winning Team'].value_counts().unstack(level=0)
+    print(pivot_df.to_string())
     end = time.time()
-    print(f'Ran {n} simulated overtime periods in {end - start} seconds.')
+    print(f'Ran {n} simulated overtime periods per season across {len(seasons)} seasons in {end - start} seconds.')

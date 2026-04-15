@@ -4,7 +4,7 @@ import numpy as np
 from simulation.rules import overtime_length
 
 
-def select_drive(drive_list: pd.DataFrame, yardline: float, time_remaining: float, score_diff: float, season) -> pd.Series:
+def select_drive(drive_list: pd.DataFrame, yardline: float, time_remaining: float, score_diff: float, season) :
     """
     Given a list of historical drives and a game situation, returns a
     randomly sampled drive from the top 5% most similar historical drives.
@@ -23,11 +23,11 @@ def select_drive(drive_list: pd.DataFrame, yardline: float, time_remaining: floa
     TIME_LAMBDA = 0.004  # controls how aggressively late-game time is weighted
 
     # --- Weights ---
-    W_YARDLINE = 0.6
-    W_TIME = 0.2
+    W_YARDLINE = 0.4
+    W_TIME = 0.4
     W_SCORE = 0.2
 
-    RETURN_COUNT = 15
+    RETURN_COUNT = 100
 
     # --- Compute deltas (normalized) ---
     d_yardline = (drive_list["start_yardline"] - yardline) / drive_list["start_yardline"].std()
@@ -36,7 +36,7 @@ def select_drive(drive_list: pd.DataFrame, yardline: float, time_remaining: floa
 
     # --- Non-linear time sensitivity ---
     # Grows exponentially as time_remaining approaches 0
-    time_sensitivity = np.exp(TIME_LAMBDA * (OT_LENGTH - time_remaining))
+    time_sensitivity =1# np.exp(TIME_LAMBDA * (OT_LENGTH - time_remaining))
 
     # --- Weighted Euclidean distance ---
     distances = np.sqrt(
@@ -45,15 +45,17 @@ def select_drive(drive_list: pd.DataFrame, yardline: float, time_remaining: floa
         W_SCORE * d_score ** 2
     )
 
-    # --- Select top 1 closest drives and sample ---
-    top15_idx = distances.nsmallest(RETURN_COUNT).index
+    # --- Select top closest drives and sample ---
+    top_idx = distances.nsmallest(RETURN_COUNT).index
 
+    candidates = drive_list.loc[top_idx]
     # --- Random sample from candidates ---
-    return drive_list.loc[top15_idx].sample(1).iloc[0]
+    return candidates.sample(1).iloc[0], candidates
 
 
 if __name__ == "__main__":
     DATA_DIR = r"C://Users//natel//PycharmProjects//NFL_Overtime_Model//data"
     drive_list = pd.read_csv(f'{DATA_DIR}//drive_list.csv', index_col=0)
-    result = select_drive(drive_list, 25, 900, 0, 2011)
+
+    result, candidates = select_drive(drive_list, 25, 30, 0, 2011)
     print(result)
