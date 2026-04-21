@@ -14,7 +14,6 @@ from multiprocessing import Pool, cpu_count
 
 DATA_DIR = Path(r"C:\Users\natel\PycharmProjects\NFL_Overtime_Model\data")
 drive_list = pd.read_csv(DATA_DIR / "drive_list.csv")
-drive_list['season'] = drive_list['drive_id'].str[:4].astype(int)
 ko_list = pd.read_csv(DATA_DIR / "ko_list.csv")
 conversion_rates = pd.read_csv(DATA_DIR / "conversion_rates.csv").T[0].to_dict()
 fourth_downs = pd.read_csv(DATA_DIR / "fourth_down_attempts.csv")
@@ -46,9 +45,10 @@ class Overtime_Period:
         self.season = season
         self.kicking_team = kicking_team
         self.had_possession = [False, False]
+        self.poscount = [0,0]
         self.scored_TD = [False, False]
         self.scored_FG = [False, False]
-        self.scores = [[], []]
+        self.posresults = [[], []]
         self.posteam = self.teams.index(kicking_team)
         self.yardline = 35
         self.drive_count = [0, 0]
@@ -102,9 +102,11 @@ class Overtime_Period:
         ko_result = ko_list[ko_list['season'] == self.season].sample(1).iloc[0]
         self.summary += f'{self.teams[self.posteam]} kicks off. '
         self.switch_posteam()
-
+        self.time_remaining-=ko_result.loc['time_elapsed']
         if ko_result.loc['return_touchdown'] == True:
             self.had_possession[self.posteam] = True
+            self.poscount[self.posteam]+=1
+            self.posresults[self.posteam].append('RETURN TOUCHDOWN')
             self.summary += f'{self.teams[self.posteam]} returns it for a touchdown.\n'
             self.score_touchdown()
         else:
@@ -125,7 +127,6 @@ class Overtime_Period:
     def score_touchdown(self):
         """Record a touchdown, attempt PAT, and kick off if the game continues."""
         self.score[self.posteam] += 6
-        self.scores[self.posteam].append('TD')
         self.scored_TD[self.posteam] = True
         self.extra_point()
         if not game_over(self):
@@ -134,7 +135,6 @@ class Overtime_Period:
     def score_field_goal(self):
         """Record a field goal and kick off if the game continues."""
         self.score[self.posteam] += 3
-        self.scores[self.posteam].append('FG')
         self.scored_FG[self.posteam] = True
         if not game_over(self):
             self.kickoff(self.posteam)
@@ -166,7 +166,7 @@ class Overtime_Period:
         """
         min_diff = (fourth_downs['ydstogo'] - ydstogo).abs().min()
         attempt = fourth_downs[(fourth_downs['ydstogo'] - ydstogo).abs() == min_diff].sample(1).iloc[0]
-        self.yardline = min(max(start_yardline + attempt['yards_gained'], 1), 99)
+        self.yardline = min(max(start_yardline - attempt['yards_gained'], 1), 99)
 
         if attempt['off_td'] == 1:
             self.summary += f'{self.teams[self.posteam]} went for it on fourth down and scored a touchdown.\n'
@@ -174,6 +174,7 @@ class Overtime_Period:
         elif attempt['def_td'] == 1:
             self.switch_posteam()
             self.had_possession[self.posteam] = True
+            self.poscount[self.posteam] += 1
             self.summary += (f'{self.teams[self.posteam]} went for it on fourth down, turned it over and '
                              f'{self.teams[int(not self.posteam)]} scored a touchdown.\n')
             self.score_touchdown()
@@ -182,7 +183,10 @@ class Overtime_Period:
             self.switch_posteam()
         else:
             self.summary += f'{self.teams[self.posteam]} went for it and succeeded on fourth down.\n'
+            # Add drive adds one to the possession count, remove one from the count here to avoid double counting
+            self.poscount[self.posteam] -= 1
             self.add_drive()
+
 
     def add_drive(self):
         """
@@ -194,13 +198,19 @@ class Overtime_Period:
         given the current game state.
         """
         self.summary += (f'{self.teams[self.posteam]} starts their drive at {self.position_text()}\n')
-        self.had_possession[self.posteam] = True
         self.drive_count[self.posteam] += 1
         score_diff = self.score[self.posteam] - self.score[int(not self.posteam)]
 
         earliest_year = max(drive_list['season'].min(), self.season - 10)
         drive, candidates = select_drive(drive_list[drive_list['season'].isin(range(earliest_year, self.season+1))],
                                          self.yardline, self.time_remaining, score_diff, self.season)
+        # if (drive['drive_result'] in ['END_GAME', 'END_HALF']
+        #         and not (self.had_possession[0] and self.had_possession[1])):
+        #     drive = candidates[~candidates['drive_result'].isin(['END_GAME', 'END_HALF'])].sample(1).iloc[0]
+
+        self.had_possession[self.posteam] = True
+        self.poscount[self.posteam] += 1
+        self.posresults[self.posteam].append(drive['drive_result'])
         self.time_remaining = max(0, self.time_remaining - drive['time_elapsed'])
 
         if drive['drive_result'] == 'PUNT':
@@ -240,9 +250,10 @@ class Overtime_Period:
                                        'BLOCKED_FG', 'BLOCKED_PUNT,_DOWNS', 'BLOCKED_FG,_DOWNS']:
             self.summary += f'{self.teams[self.posteam]} turns the ball over via {drive["drive_result"]}.'
             self.switch_posteam()
-            self.had_possession[self.posteam] = True
             if drive['defteam_TD'] == True:
                 self.summary += f'{self.teams[self.posteam]} returns it for a touchdown.\n'
+                self.had_possession[self.posteam] = True
+                self.poscount[self.posteam] += 1
                 self.score_touchdown()
             else:
                 self.yardline = drive['next_drive_start_yardline']
@@ -253,9 +264,8 @@ class Overtime_Period:
                              f'{drive["drive_result"].replace(",_", " and ")}.\n')
             self.score[int(not self.posteam)] += 2
             self.safety_scored = True
-            self.scores[int(not self.posteam)].append('SFTY')
-            if not game_over(self):
-                self.kickoff(self.posteam)
+
+
 
     def result(self) -> dict:
         """
@@ -275,12 +285,12 @@ class Overtime_Period:
             'Kicking Team Won': int(self.kicking_team == self.get_winner()),
             'Receiving Team Won': int(self.kicking_team != self.get_winner() and self.get_winner() != 'TIE'),
             'Tie Game': int(self.get_winner() == 'TIE'),
-            "Team 0 Score": self.score[0],
-            "Team 0 Scoring": self.scores[0],
-            "Team 1 Score": self.score[1],
-            "Team 1 Scoring": self.scores[1],
-            "Team 0 Drives": self.drive_count[0],
-            "Team 1 Drives": self.drive_count[1],
+            f"{self.teams[0]} Score": self.score[0],
+            f"{self.teams[0]} Possession Results": self.posresults[0],
+            f"{self.teams[1]} Score": self.score[1],
+            f"{self.teams[1]} Possession Results": self.posresults[1],
+            f"{self.teams[0]} Possessions": self.poscount[0],
+            f"{self.teams[1]} Possessions": self.poscount[1],
             "Time Remaining": self.time_remaining,
             "OT Summary": self.summary,
         }
@@ -302,8 +312,8 @@ def run_simulation(args):
 
 if __name__ == '__main__':
     start = time.time()
-    n = 1000
-    seasons = [2025]
+    n = 10000
+    seasons = [2011, 2013, 2015, 2016, 2017, 2024,2025]
     go_for_ties = False
 
     all_dfs = []

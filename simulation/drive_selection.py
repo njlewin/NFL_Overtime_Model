@@ -34,14 +34,10 @@ def select_drive(drive_list: pd.DataFrame, yardline: float, time_remaining: floa
     d_time = (drive_list["start_time_left"] - time_remaining) / drive_list["start_time_left"].std()
     d_score = (drive_list["start_score_diff"] - score_diff) / MAX_SCORE_DIFF
 
-    # --- Non-linear time sensitivity ---
-    # Grows exponentially as time_remaining approaches 0
-    time_sensitivity =1# np.exp(TIME_LAMBDA * (OT_LENGTH - time_remaining))
-
     # --- Weighted Euclidean distance ---
     distances = np.sqrt(
         W_YARDLINE * d_yardline ** 2 +
-        W_TIME * time_sensitivity * d_time ** 2 +
+        W_TIME * d_time ** 2 +
         W_SCORE * d_score ** 2
     )
 
@@ -51,11 +47,3 @@ def select_drive(drive_list: pd.DataFrame, yardline: float, time_remaining: floa
     candidates = drive_list.loc[top_idx]
     # --- Random sample from candidates ---
     return candidates.sample(1).iloc[0], candidates
-
-
-if __name__ == "__main__":
-    DATA_DIR = r"C://Users//natel//PycharmProjects//NFL_Overtime_Model//data"
-    drive_list = pd.read_csv(f'{DATA_DIR}//drive_list.csv', index_col=0)
-
-    result, candidates = select_drive(drive_list, 25, 30, 0, 2011)
-    print(result)
