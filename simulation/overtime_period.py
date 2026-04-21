@@ -11,12 +11,12 @@ from simulation.drive_selection import select_drive
 from simulation.rules import game_over, overtime_length
 import time
 from multiprocessing import Pool, cpu_count
+from config import *
 
-DATA_DIR = Path(r"C:\Users\natel\PycharmProjects\NFL_Overtime_Model\data")
-drive_list = pd.read_csv(DATA_DIR / "drive_list.csv")
-ko_list = pd.read_csv(DATA_DIR / "ko_list.csv")
-conversion_rates = pd.read_csv(DATA_DIR / "conversion_rates.csv").T[0].to_dict()
-fourth_downs = pd.read_csv(DATA_DIR / "fourth_down_attempts.csv")
+drive_list = pd.read_csv(DATA_DIR / DRIVE_FILE)
+ko_list = pd.read_csv(DATA_DIR / KO_FILE)
+conversion_rates = pd.read_csv(DATA_DIR / CONVERSION_FILE).T[0].to_dict()
+fourth_downs = pd.read_csv(DATA_DIR / FOURTH_DOWN_FILE)
 
 
 class Overtime_Period:

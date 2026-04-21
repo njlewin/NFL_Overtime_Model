@@ -1,9 +1,10 @@
 import pandas as pd
 import nfl_data_py as nfl
 import os
+from config import *
+
 
 def aggregate_drives(pbp_df):
-
     # Filter plays
     df = pbp_df[
         pbp_df['play_type'].isin(['run', 'pass', 'punt', 'no_play', 'field_goal', 'extra_point', 'qb_spike', 'qb_kneel']) &
@@ -65,7 +66,7 @@ def aggregate_drives(pbp_df):
         'time_elapsed', 'defteam_TD','posteam_score_change', 'defteam_score_change', 'last_play_yardline',
         'last_ydstogo', 'next_drive_start_yardline'
     ]
-    drives[output_cols].to_csv('drive_list.csv', index=False)
+    drives[output_cols].to_csv(DRIVE_FILE, index=False)
     print('Drives aggregated')
     return df
 
@@ -88,7 +89,7 @@ def aggregate_kos(pbp_df):
         'time_elapsed':pbp_df.loc[valid_kick, 'play_duration'].values,
     }).dropna()
 
-    kickoff_results.to_csv('ko_list.csv', index=False)
+    kickoff_results.to_csv(KO_FILE, index=False)
     print('Kickoffs aggregated')
     return kickoff_results
 
@@ -104,15 +105,14 @@ def aggregate_conversions(pbp_df):
 
 def import_pbp_data (most_recent_season = 2025, look_back = 10, force_refresh = False):
     # Import nfl play by play data.
-    file_name = 'pbp_data.pkl'
-    if not os.path.isfile(file_name) or force_refresh:
+    if not os.path.isfile(PBP_FILE) or force_refresh:
         pbp_df = nfl.import_pbp_data(years=[most_recent_season - i for i in range(look_back)], downcast=True).copy()
         pbp_df = pbp_df.sort_values(['game_id', 'game_seconds_remaining','play_id'], ascending=[True, False, True])
         pbp_df['play_duration'] = pbp_df.groupby('game_id')['game_seconds_remaining'].diff(-1)
-        pbp_df.to_pickle(file_name)
+        pbp_df.to_parquet(PBP_FILE)
         print("Wrote pbp file")
     else:
-        pbp_df = pd.read_pickle(file_name)
+        pbp_df = pd.read_parquet(PBP_FILE)
         print("Loaded pbp data")
     return pbp_df
 
@@ -122,12 +122,12 @@ def aggregate_fourth_down_attempts(pbp_df):
     df['def_td'] = df['defteam'] == df['td_team']
     cols = ['fourth_down_converted', 'fourth_down_failed', 'yardline_100','ydstogo', 'yards_gained', 'off_td', 'def_td']
 
-    df[cols].to_csv('fourth_down_attempts.csv', index=False)
+    df[cols].to_csv(FOURTH_DOWN_FILE, index=False)
 
     print('Fourth down attempts aggregated')
 
 if __name__ == "__main__":
-    pbp_df = import_pbp_data(most_recent_season = 2025, look_back = 25, force_refresh = True)
+    pbp_df = import_pbp_data(most_recent_season = 2025, look_back = 25, force_refresh = False)
     aggregate_drives(pbp_df)
     aggregate_kos(pbp_df)
     aggregate_conversions(pbp_df)

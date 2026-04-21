@@ -1,2 +1,4 @@
 ﻿.venv/
-/data/pbp_data.pkl
+/data/pbp_data.parquet
+/output/*.csv
+/output/*.parquet
