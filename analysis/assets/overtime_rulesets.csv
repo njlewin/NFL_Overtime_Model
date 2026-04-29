@@ -1,0 +1,7 @@
+Ruleset,Overtime Rules,Overtime Length,Kickoff Rules,Avg. Receiving Team Start
+Pre 2012,Pure Sudden Death,15 minutes,"Kickoff at the 35 Yardline, Touchback at the 20 Yardline",28
+2012-2015,"Sudden Death, except for a first possession field goal",15 minutes,"Kickoff at the 35 Yardline, Touchback at the 20 Yardline",23
+2016,"Sudden Death, except for a first possession field goal",15 minutes,"Kickoff at the 35 Yardline, Touchback at the 25 Yardline",26
+2017-2023,"Sudden Death, except for a first possession field goal",10 minutes,"Kickoff at the 35 Yardline, Touchback at the 25 Yardline",26
+2024,"Sudden Death, except for a first possession field goal",10 minutes,"Dynamic Kickoff Rules, Touchback at the 30 Yardline",30
+2025,Both Teams Guaranteed one possession,10 minutes,"Dynamic Kickoff Rules, Touchback at the 35 yard line",31

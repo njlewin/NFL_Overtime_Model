@@ -39,7 +39,7 @@ class Overtime_Period:
 
     """
 
-    def __init__(self, team_0: str, team_1: str, kicking_team: str, season: int = 2025, go_for_ties = True):
+    def __init__(self, team_0: str, team_1: str, kicking_team: str, season: int = 2025, goforit_2pc = False, goforit_fg = False):
         self.teams = [team_0, team_1]
         self.score = [0, 0]
         self.season = season
@@ -55,7 +55,8 @@ class Overtime_Period:
         self.time_remaining = overtime_length(season)
         self.summary = ""
         self.safety_scored = False
-        self.go_for_ties = go_for_ties
+        self.goforit_2pc = goforit_2pc
+        self.goforit_fg = goforit_fg
 
     def set_posteam(self, team_index: int):
         self.posteam = team_index
@@ -116,10 +117,10 @@ class Overtime_Period:
     def go_for_two(self):
         """
         Determine whether the possession team should attempt a 2-point conversion.
-        Only returns True when down 1 and go_for_ties is False (aggressive strategy).
+        Only returns True when down 1 and the 2pc go for it flag is true.
         """
         score_diff = self.score[self.posteam] - self.score[int(not self.posteam)]
-        if score_diff == -1 and not self.go_for_ties:
+        if score_diff == -1 and self.goforit_2pc:
             return True
         else:
             return False
@@ -236,7 +237,7 @@ class Overtime_Period:
             fg_loses = self.score[self.posteam] + 3 < self.score[int(not self.posteam)]
 
             # Override: go for it if a FG would not give the possession team the lead
-            if fg_loses or (fg_ties and not self.go_for_ties):
+            if fg_loses or (fg_ties and self.goforit_fg):
                 self.fourth_down_attempt(drive['last_play_yardline'], drive['last_ydstogo'])
             else:
                 self.summary += f'{self.teams[self.posteam]} kicks a field goal.\n'
@@ -252,6 +253,7 @@ class Overtime_Period:
             self.switch_posteam()
             if drive['defteam_TD'] == True:
                 self.summary += f'{self.teams[self.posteam]} returns it for a touchdown.\n'
+                self.switch_posteam()
                 self.had_possession[self.posteam] = True
                 self.poscount[self.posteam] += 1
                 self.score_touchdown()
@@ -301,32 +303,3 @@ class Overtime_Period:
         elif self.score[1] > self.score[0]:
             return self.teams[1]
         return 'TIE'
-
-
-def run_simulation(args):
-    season, go_for_ties = args
-    OT = Overtime_Period('Kicking Team', 'Receiving Team', 'Kicking Team', season, go_for_ties)
-    OT.simulate()
-    return OT.result()
-
-
-if __name__ == '__main__':
-    start = time.time()
-    n = 10000
-    seasons = [2011, 2013, 2015, 2016, 2017, 2024,2025]
-    go_for_ties = False
-
-    all_dfs = []
-    with Pool(cpu_count()) as pool:
-        for season in seasons:
-            results = pool.map(run_simulation, [(season, go_for_ties)] * n)
-            df = pd.DataFrame(results)
-            df['Season'] = season
-            all_dfs.append(df)
-
-    result_df = pd.concat(all_dfs, ignore_index=True)
-    result_df.to_csv(f'overtime_{"_".join(map(str, seasons))}{"_agg" if not go_for_ties else ""}.csv')
-    pivot_df = result_df.groupby('Season')['Winning Team'].value_counts().unstack(level=0)
-    print(pivot_df.to_string())
-    end = time.time()
-    print(f'Ran {n} simulated overtime periods per season across {len(seasons)} seasons in {end - start} seconds.')

@@ -1,0 +1,1213 @@
+Team 0,Team 1,Kicking Team,Winning Team,Kicking Team Won,Receiving Team Won,Tie Game,Kicking Team Score,Kicking Team Possession Results,Receiving Team Score,Receiving Team Possession Results,Kicking Team Possessions,Receiving Team Possessions,Time Remaining,OT Summary
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,0,"['PUNT', 'PUNT']",3,['FIELD_GOAL'],1,1,163.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:56 Remaining
+Receiving Team starts their drive at their own 24 yardline
+Receiving Team kicks a field goal.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 3.  5:49 Remaining
+Kicking Team starts their drive at their own 29 yardline
+Kicking Team went for it and succeeded on fourth down.
+Kicking Team starts their drive at their own 43.0 yardline
+Kicking Team went for it and failed on fourth down.
+Receiving Team wins. Kicking Team: 0, Receiving Team: 3.  2:43 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,0,['PUNT'],3,"['PUNT', 'FIELD_GOAL']",1,2,0.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:50 Remaining
+Receiving Team starts their drive at their own 15 yardline
+Receiving Team punts.
+Kicking Team: 0, Receiving Team: 0.  6:19 Remaining
+Kicking Team starts their drive at their own 41.0 yardline
+Kicking Team punts.
+Kicking Team: 0, Receiving Team: 0.  4:54 Remaining
+Receiving Team starts their drive at their own 10.0 yardline
+Receiving Team kicks a field goal.
+Receiving Team wins. Kicking Team: 0, Receiving Team: 3.  0:00 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Kicking Team,1,0,0,7,['TOUCHDOWN'],0,['PUNT'],1,1,47.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:54 Remaining
+Receiving Team starts their drive at their own 24 yardline
+Receiving Team punts.
+Kicking Team: 0, Receiving Team: 0.  7:47 Remaining
+Kicking Team starts their drive at their own 20.0 yardline
+Kicking Team scores a touchdown.
+Extra point is good.
+Kicking Team wins. Kicking Team: 7, Receiving Team: 0.  0:47 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,0,['PUNT'],3,['FIELD_GOAL'],1,1,183.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:51 Remaining
+Receiving Team starts their drive at their own 33 yardline
+Receiving Team kicks a field goal.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 3.  4:31 Remaining
+Kicking Team starts their drive at their own 26 yardline
+Kicking Team went for it and failed on fourth down.
+Receiving Team wins. Kicking Team: 0, Receiving Team: 3.  3:03 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,0,['INTERCEPTION'],3,"['PUNT', 'FIELD_GOAL']",1,2,260.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:54 Remaining
+Receiving Team starts their drive at their own 31 yardline
+Receiving Team punts.
+Kicking Team: 0, Receiving Team: 0.  8:47 Remaining
+Kicking Team starts their drive at their own 2.0 yardline
+Kicking Team turns the ball over via INTERCEPTION.
+Kicking Team: 0, Receiving Team: 0.  6:23 Remaining
+Receiving Team starts their drive at the opponents 4.0 yardline
+Receiving Team kicks a field goal.
+Receiving Team wins. Kicking Team: 0, Receiving Team: 3.  4:20 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,TIE,0,0,1,0,"['PUNT', 'INTERCEPTION']",0,"['INTERCEPTION', 'MISSED_FG']",2,2,0.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:55 Remaining
+Receiving Team starts their drive at their own 26 yardline
+Receiving Team turns the ball over via INTERCEPTION.
+Kicking Team: 0, Receiving Team: 0.  5:32 Remaining
+Kicking Team starts their drive at their own 28.0 yardline
+Kicking Team punts.
+Kicking Team: 0, Receiving Team: 0.  3:07 Remaining
+Receiving Team starts their drive at their own 20.0 yardline
+Receiving Team turns the ball over via MISSED_FG.
+Kicking Team: 0, Receiving Team: 0.  0:03 Remaining
+Kicking Team starts their drive at their own 43.0 yardline
+Kicking Team turns the ball over via INTERCEPTION.
+The game ends in a tie. Kicking Team: 0, Receiving Team: 0.  0:00 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Kicking Team,1,0,0,8,['TOUCHDOWN'],7,['TOUCHDOWN'],1,1,99.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  10:00 Remaining
+Receiving Team starts their drive at their own 35 yardline
+Receiving Team scores a touchdown.
+Extra point is good.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 7.  5:21 Remaining
+Kicking Team starts their drive at their own 28 yardline
+Kicking Team scores a touchdown.
+Two point conversion is good.
+Kicking Team wins. Kicking Team: 8, Receiving Team: 7.  1:39 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,TIE,0,0,1,0,"['INTERCEPTION', 'PUNT', 'MISSED_FG']",0,"['INTERCEPTION', 'MISSED_FG', 'INTERCEPTION']",3,3,0.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:55 Remaining
+Receiving Team starts their drive at their own 25 yardline
+Receiving Team turns the ball over via INTERCEPTION.
+Kicking Team: 0, Receiving Team: 0.  6:37 Remaining
+Kicking Team starts their drive at their own 38.0 yardline
+Kicking Team turns the ball over via INTERCEPTION.
+Kicking Team: 0, Receiving Team: 0.  4:59 Remaining
+Receiving Team starts their drive at the opponents 33.0 yardline
+Receiving Team turns the ball over via MISSED_FG.
+Kicking Team: 0, Receiving Team: 0.  4:47 Remaining
+Kicking Team starts their drive at their own 45.0 yardline
+Kicking Team punts.
+Kicking Team: 0, Receiving Team: 0.  3:36 Remaining
+Receiving Team starts their drive at their own 23.0 yardline
+Receiving Team turns the ball over via INTERCEPTION.
+Kicking Team: 0, Receiving Team: 0.  0:37 Remaining
+Kicking Team starts their drive at their own 38.0 yardline
+Kicking Team turns the ball over via MISSED_FG.
+The game ends in a tie. Kicking Team: 0, Receiving Team: 0.  0:00 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,0,"['PUNT', 'INTERCEPTION']",7,"['PUNT', 'PUNT', 'TOUCHDOWN']",2,3,106.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  10:00 Remaining
+Receiving Team starts their drive at their own 40 yardline
+Receiving Team punts.
+Kicking Team: 0, Receiving Team: 0.  8:45 Remaining
+Kicking Team starts their drive at their own 23.0 yardline
+Kicking Team punts.
+Kicking Team: 0, Receiving Team: 0.  2:59 Remaining
+Receiving Team starts their drive at their own 10.0 yardline
+Receiving Team punts.
+Kicking Team: 0, Receiving Team: 0.  1:59 Remaining
+Kicking Team starts their drive at their own 15.0 yardline
+Kicking Team turns the ball over via INTERCEPTION.
+Kicking Team: 0, Receiving Team: 0.  1:52 Remaining
+Receiving Team starts their drive at the opponents 26.0 yardline
+Receiving Team scores a touchdown.
+Extra point is good.
+Receiving Team wins. Kicking Team: 0, Receiving Team: 7.  1:46 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Kicking Team,1,0,0,6,"['FIELD_GOAL', 'FIELD_GOAL']",3,"['FIELD_GOAL', 'PUNT']",2,2,0.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  10:00 Remaining
+Receiving Team starts their drive at their own 35 yardline
+Receiving Team kicks a field goal.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 3.  5:50 Remaining
+Kicking Team starts their drive at their own 35 yardline
+Kicking Team kicks a field goal.
+Kicking Team kicks off. 
+Kicking Team: 3, Receiving Team: 3.  4:17 Remaining
+Receiving Team starts their drive at their own 28 yardline
+Receiving Team punts.
+Kicking Team: 3, Receiving Team: 3.  1:10 Remaining
+Kicking Team starts their drive at their own 15.0 yardline
+Kicking Team kicks a field goal.
+Kicking Team wins. Kicking Team: 6, Receiving Team: 3.  0:00 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,0,['FUMBLE'],7,['TOUCHDOWN'],1,1,233.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:54 Remaining
+Receiving Team starts their drive at their own 31 yardline
+Receiving Team scores a touchdown.
+Extra point is good.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 7.  5:08 Remaining
+Kicking Team starts their drive at their own 26 yardline
+Kicking Team turns the ball over via FUMBLE.
+Receiving Team wins. Kicking Team: 0, Receiving Team: 7.  3:53 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,TIE,0,0,1,3,['FIELD_GOAL'],3,"['FIELD_GOAL', 'MISSED_FG']",1,2,0.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:54 Remaining
+Receiving Team starts their drive at their own 28 yardline
+Receiving Team kicks a field goal.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 3.  5:13 Remaining
+Kicking Team starts their drive at their own 29 yardline
+Kicking Team kicks a field goal.
+Kicking Team kicks off. 
+Kicking Team: 3, Receiving Team: 3.  0:02 Remaining
+Receiving Team starts their drive at the opponents 49 yardline
+Receiving Team turns the ball over via MISSED_FG.
+The game ends in a tie. Kicking Team: 3, Receiving Team: 3.  0:00 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,0,['INTERCEPTION'],3,['FIELD_GOAL'],1,1,268.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:54 Remaining
+Receiving Team starts their drive at their own 24 yardline
+Receiving Team kicks a field goal.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 3.  6:21 Remaining
+Kicking Team starts their drive at their own 35 yardline
+Kicking Team turns the ball over via INTERCEPTION.
+Receiving Team wins. Kicking Team: 0, Receiving Team: 3.  4:28 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,0,['INTERCEPTION'],3,['FIELD_GOAL'],1,1,255.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:52 Remaining
+Receiving Team starts their drive at their own 37 yardline
+Receiving Team kicks a field goal.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 3.  5:44 Remaining
+Kicking Team starts their drive at their own 30 yardline
+Kicking Team turns the ball over via INTERCEPTION.
+Receiving Team wins. Kicking Team: 0, Receiving Team: 3.  4:15 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Kicking Team,1,0,0,8,['TOUCHDOWN'],7,['TOUCHDOWN'],1,1,285.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:51 Remaining
+Receiving Team starts their drive at their own 29 yardline
+Receiving Team scores a touchdown.
+Extra point is good.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 7.  6:04 Remaining
+Kicking Team starts their drive at their own 35 yardline
+Kicking Team scores a touchdown.
+Two point conversion is good.
+Kicking Team wins. Kicking Team: 8, Receiving Team: 7.  4:45 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Kicking Team,1,0,0,8,['TOUCHDOWN'],7,['TOUCHDOWN'],1,1,76.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:50 Remaining
+Receiving Team starts their drive at their own 16 yardline
+Receiving Team scores a touchdown.
+Extra point is good.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 7.  6:29 Remaining
+Kicking Team starts their drive at the opponents 48 yardline
+Kicking Team scores a touchdown.
+Two point conversion is good.
+Kicking Team wins. Kicking Team: 8, Receiving Team: 7.  1:16 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Kicking Team,1,0,0,7,['TOUCHDOWN'],3,['FIELD_GOAL'],1,1,80.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:55 Remaining
+Receiving Team starts their drive at their own 12 yardline
+Receiving Team kicks a field goal.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 3.  3:47 Remaining
+Kicking Team starts their drive at their own 45 yardline
+Kicking Team scores a touchdown.
+Extra point is good.
+Kicking Team wins. Kicking Team: 7, Receiving Team: 3.  1:20 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,3,['FIELD_GOAL'],10,"['FIELD_GOAL', 'RETURN TOUCHDOWN']",1,2,164.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:53 Remaining
+Receiving Team starts their drive at their own 45 yardline
+Receiving Team kicks a field goal.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 3.  5:05 Remaining
+Kicking Team starts their drive at their own 35 yardline
+Kicking Team kicks a field goal.
+Kicking Team kicks off. Receiving Team returns it for a touchdown.
+Extra point is good.
+Receiving Team wins. Kicking Team: 3, Receiving Team: 10.  2:44 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Kicking Team,1,0,0,8,"['PUNT', 'TOUCHDOWN']",7,['TOUCHDOWN'],1,1,382.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:56 Remaining
+Receiving Team starts their drive at their own 32 yardline
+Receiving Team scores a touchdown.
+Extra point is good.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 7.  8:22 Remaining
+Kicking Team starts their drive at their own 27 yardline
+Kicking Team went for it and succeeded on fourth down.
+Kicking Team starts their drive at their own 44.0 yardline
+Kicking Team scores a touchdown.
+Two point conversion is good.
+Kicking Team wins. Kicking Team: 8, Receiving Team: 7.  6:22 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,0,['FUMBLE'],3,['FIELD_GOAL'],1,1,119.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:54 Remaining
+Receiving Team starts their drive at their own 31 yardline
+Receiving Team kicks a field goal.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 3.  3:46 Remaining
+Kicking Team starts their drive at their own 36 yardline
+Kicking Team turns the ball over via FUMBLE.
+Receiving Team wins. Kicking Team: 0, Receiving Team: 3.  1:59 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,0,['PUNT'],3,"['PUNT', 'FIELD_GOAL']",1,2,227.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  10:00 Remaining
+Receiving Team starts their drive at their own 35 yardline
+Receiving Team punts.
+Kicking Team: 0, Receiving Team: 0.  9:05 Remaining
+Kicking Team starts their drive at their own 20.0 yardline
+Kicking Team punts.
+Kicking Team: 0, Receiving Team: 0.  6:49 Remaining
+Receiving Team starts their drive at their own 18.0 yardline
+Receiving Team kicks a field goal.
+Receiving Team wins. Kicking Team: 0, Receiving Team: 3.  3:47 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,TIE,0,0,1,0,"['PUNT', 'END_GAME']",0,"['PUNT', 'INTERCEPTION']",2,2,0.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:54 Remaining
+Receiving Team starts their drive at their own 25 yardline
+Receiving Team punts.
+Kicking Team: 0, Receiving Team: 0.  6:46 Remaining
+Kicking Team starts their drive at their own 19.0 yardline
+Kicking Team punts.
+Kicking Team: 0, Receiving Team: 0.  5:38 Remaining
+Receiving Team starts their drive at their own 10.0 yardline
+Receiving Team turns the ball over via INTERCEPTION.
+Kicking Team: 0, Receiving Team: 0.  5:26 Remaining
+Kicking Team starts their drive at the opponents 28.0 yardline
+Time runs out.
+The game ends in a tie. Kicking Team: 0, Receiving Team: 0.  0:00 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,0,['DOWNS'],7,"['PUNT', 'TOUCHDOWN']",1,2,85.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  10:00 Remaining
+Receiving Team starts their drive at their own 40 yardline
+Receiving Team punts.
+Kicking Team: 0, Receiving Team: 0.  9:01 Remaining
+Kicking Team starts their drive at their own 27.0 yardline
+Kicking Team turns the ball over via DOWNS.
+Kicking Team: 0, Receiving Team: 0.  6:03 Remaining
+Receiving Team starts their drive at their own 47.0 yardline
+Receiving Team scores a touchdown.
+Extra point is good.
+Receiving Team wins. Kicking Team: 0, Receiving Team: 7.  1:25 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Kicking Team,1,0,0,3,['FIELD_GOAL'],0,['PUNT'],1,1,252.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  10:00 Remaining
+Receiving Team starts their drive at their own 40 yardline
+Receiving Team punts.
+Kicking Team: 0, Receiving Team: 0.  9:02 Remaining
+Kicking Team starts their drive at their own 10.0 yardline
+Kicking Team kicks a field goal.
+Kicking Team wins. Kicking Team: 3, Receiving Team: 0.  4:12 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,0,"['MISSED_FG', 'MISSED_FG']",3,"['INTERCEPTION', 'BLOCKED_PUNT,_DOWNS', 'FIELD_GOAL']",2,3,19.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:54 Remaining
+Receiving Team starts their drive at their own 19 yardline
+Receiving Team turns the ball over via INTERCEPTION.
+Kicking Team: 0, Receiving Team: 0.  4:50 Remaining
+Kicking Team starts their drive at their own 3.0 yardline
+Kicking Team turns the ball over via MISSED_FG.
+Kicking Team: 0, Receiving Team: 0.  3:19 Remaining
+Receiving Team starts their drive at their own 46.0 yardline
+Receiving Team turns the ball over via BLOCKED_PUNT,_DOWNS.
+Kicking Team: 0, Receiving Team: 0.  1:48 Remaining
+Kicking Team starts their drive at the opponents 30.0 yardline
+Kicking Team turns the ball over via MISSED_FG.
+Kicking Team: 0, Receiving Team: 0.  0:47 Remaining
+Receiving Team starts their drive at their own 41.0 yardline
+Receiving Team kicks a field goal.
+Receiving Team wins. Kicking Team: 0, Receiving Team: 3.  0:19 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Kicking Team,1,0,0,7,['TOUCHDOWN'],0,['INTERCEPTION'],1,1,530.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:52 Remaining
+Receiving Team starts their drive at their own 39 yardline
+Receiving Team turns the ball over via INTERCEPTION.
+Kicking Team: 0, Receiving Team: 0.  9:46 Remaining
+Kicking Team starts their drive at the opponents 37.0 yardline
+Kicking Team scores a touchdown.
+Extra point is good.
+Kicking Team wins. Kicking Team: 7, Receiving Team: 0.  8:50 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,0,['DOWNS'],7,['TOUCHDOWN'],1,1,232.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:55 Remaining
+Receiving Team starts their drive at their own 38 yardline
+Receiving Team scores a touchdown.
+Extra point is good.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 7.  6:09 Remaining
+Kicking Team starts their drive at their own 28 yardline
+Kicking Team turns the ball over via DOWNS.
+Receiving Team wins. Kicking Team: 0, Receiving Team: 7.  3:52 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Kicking Team,1,0,0,7,['TOUCHDOWN'],3,['FIELD_GOAL'],1,1,194.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  10:00 Remaining
+Receiving Team starts their drive at their own 35 yardline
+Receiving Team kicks a field goal.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 3.  7:00 Remaining
+Kicking Team starts their drive at their own 35 yardline
+Kicking Team scores a touchdown.
+Extra point is good.
+Kicking Team wins. Kicking Team: 7, Receiving Team: 3.  3:14 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,6,['TOUCHDOWN'],7,['TOUCHDOWN'],1,1,106.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:55 Remaining
+Receiving Team starts their drive at their own 30 yardline
+Receiving Team scores a touchdown.
+Extra point is good.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 7.  3:03 Remaining
+Kicking Team starts their drive at their own 29 yardline
+Kicking Team scores a touchdown.
+Two point conversion failed.
+Receiving Team wins. Kicking Team: 6, Receiving Team: 7.  1:46 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,0,['DOWNS'],3,['FIELD_GOAL'],1,1,64.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:56 Remaining
+Receiving Team starts their drive at their own 23 yardline
+Receiving Team kicks a field goal.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 3.  2:23 Remaining
+Kicking Team starts their drive at their own 24 yardline
+Kicking Team turns the ball over via DOWNS.
+Receiving Team wins. Kicking Team: 0, Receiving Team: 3.  1:04 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Kicking Team,1,0,0,6,"['FIELD_GOAL', 'FIELD_GOAL']",3,"['FIELD_GOAL', 'INTERCEPTION']",2,2,155.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  10:00 Remaining
+Receiving Team starts their drive at their own 35 yardline
+Receiving Team kicks a field goal.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 3.  7:41 Remaining
+Kicking Team starts their drive at their own 23 yardline
+Kicking Team kicks a field goal.
+Kicking Team kicks off. 
+Kicking Team: 3, Receiving Team: 3.  3:52 Remaining
+Receiving Team starts their drive at their own 40 yardline
+Receiving Team turns the ball over via INTERCEPTION.
+Kicking Team: 3, Receiving Team: 3.  3:37 Remaining
+Kicking Team starts their drive at their own 25.0 yardline
+Kicking Team kicks a field goal.
+Kicking Team wins. Kicking Team: 6, Receiving Team: 3.  2:35 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,0,['END_GAME'],3,['FIELD_GOAL'],1,1,0.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:55 Remaining
+Receiving Team starts their drive at their own 30 yardline
+Receiving Team kicks a field goal.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 3.  3:05 Remaining
+Kicking Team starts their drive at their own 40 yardline
+Time runs out.
+Receiving Team wins. Kicking Team: 0, Receiving Team: 3.  0:00 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Kicking Team,1,0,0,7,['TOUCHDOWN'],3,['FIELD_GOAL'],1,1,22.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:55 Remaining
+Receiving Team starts their drive at their own 21 yardline
+Receiving Team kicks a field goal.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 3.  2:20 Remaining
+Kicking Team starts their drive at their own 29 yardline
+Kicking Team scores a touchdown.
+Extra point is good.
+Kicking Team wins. Kicking Team: 7, Receiving Team: 3.  0:22 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,6,['TOUCHDOWN'],7,['TOUCHDOWN'],1,1,196.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:54 Remaining
+Receiving Team starts their drive at their own 26 yardline
+Receiving Team scores a touchdown.
+Extra point is good.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 7.  4:55 Remaining
+Kicking Team starts their drive at their own 35 yardline
+Kicking Team scores a touchdown.
+Two point conversion failed.
+Receiving Team wins. Kicking Team: 6, Receiving Team: 7.  3:16 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,0,['PUNT'],3,['FIELD_GOAL'],1,1,234.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  10:00 Remaining
+Receiving Team starts their drive at their own 35 yardline
+Receiving Team kicks a field goal.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 3.  5:22 Remaining
+Kicking Team starts their drive at their own 31 yardline
+Kicking Team went for it and failed on fourth down.
+Receiving Team wins. Kicking Team: 0, Receiving Team: 3.  3:54 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Kicking Team,1,0,0,8,['TOUCHDOWN'],7,['TOUCHDOWN'],1,1,468.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:54 Remaining
+Receiving Team starts their drive at their own 21 yardline
+Receiving Team scores a touchdown.
+Extra point is good.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 7.  8:04 Remaining
+Kicking Team starts their drive at their own 25 yardline
+Kicking Team scores a touchdown.
+Two point conversion is good.
+Kicking Team wins. Kicking Team: 8, Receiving Team: 7.  7:48 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,0,['MISSED_FG'],3,['FIELD_GOAL'],1,1,216.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  10:00 Remaining
+Receiving Team starts their drive at their own 35 yardline
+Receiving Team kicks a field goal.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 3.  6:34 Remaining
+Kicking Team starts their drive at their own 31 yardline
+Kicking Team turns the ball over via MISSED_FG.
+Receiving Team wins. Kicking Team: 0, Receiving Team: 3.  3:36 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,0,['PUNT'],3,['FIELD_GOAL'],1,1,376.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:54 Remaining
+Receiving Team starts their drive at their own 37 yardline
+Receiving Team kicks a field goal.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 3.  7:44 Remaining
+Kicking Team starts their drive at their own 33 yardline
+Kicking Team went for it and failed on fourth down.
+Receiving Team wins. Kicking Team: 0, Receiving Team: 3.  6:16 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Kicking Team,1,0,0,7,['TOUCHDOWN'],0,['INTERCEPTION'],1,1,65.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:55 Remaining
+Receiving Team starts their drive at their own 29 yardline
+Receiving Team turns the ball over via INTERCEPTION.
+Kicking Team: 0, Receiving Team: 0.  7:45 Remaining
+Kicking Team starts their drive at their own 30.0 yardline
+Kicking Team scores a touchdown.
+Extra point is good.
+Kicking Team wins. Kicking Team: 7, Receiving Team: 0.  1:05 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Kicking Team,1,0,0,3,"['PUNT', 'FIELD_GOAL']",0,"['PUNT', 'PUNT']",2,2,6.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:51 Remaining
+Receiving Team starts their drive at their own 18 yardline
+Receiving Team punts.
+Kicking Team: 0, Receiving Team: 0.  8:56 Remaining
+Kicking Team starts their drive at their own 46.0 yardline
+Kicking Team punts.
+Kicking Team: 0, Receiving Team: 0.  8:35 Remaining
+Receiving Team starts their drive at their own 24.0 yardline
+Receiving Team punts.
+Kicking Team: 0, Receiving Team: 0.  5:33 Remaining
+Kicking Team starts their drive at their own 25.0 yardline
+Kicking Team kicks a field goal.
+Kicking Team wins. Kicking Team: 3, Receiving Team: 0.  0:06 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,0,"['PUNT', 'PUNT']",3,"['DOWNS', 'PUNT', 'FIELD_GOAL']",2,3,82.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:56 Remaining
+Receiving Team starts their drive at their own 27 yardline
+Receiving Team turns the ball over via DOWNS.
+Kicking Team: 0, Receiving Team: 0.  7:01 Remaining
+Kicking Team starts their drive at the opponents 47.0 yardline
+Kicking Team punts.
+Kicking Team: 0, Receiving Team: 0.  5:39 Remaining
+Receiving Team starts their drive at their own 11.0 yardline
+Receiving Team punts.
+Kicking Team: 0, Receiving Team: 0.  4:09 Remaining
+Kicking Team starts their drive at their own 46.0 yardline
+Kicking Team punts.
+Kicking Team: 0, Receiving Team: 0.  2:14 Remaining
+Receiving Team starts their drive at their own 11.0 yardline
+Receiving Team kicks a field goal.
+Receiving Team wins. Kicking Team: 0, Receiving Team: 3.  1:22 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,TIE,0,0,1,3,"['FIELD_GOAL', 'PUNT']",3,"['FIELD_GOAL', 'PUNT']",2,2,0.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  10:00 Remaining
+Receiving Team starts their drive at their own 35 yardline
+Receiving Team kicks a field goal.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 3.  6:33 Remaining
+Kicking Team starts their drive at their own 20 yardline
+Kicking Team kicks a field goal.
+Kicking Team kicks off. 
+Kicking Team: 3, Receiving Team: 3.  2:52 Remaining
+Receiving Team starts their drive at their own 25 yardline
+Receiving Team punts.
+Kicking Team: 3, Receiving Team: 3.  0:08 Remaining
+Kicking Team starts their drive at their own 5.0 yardline
+Kicking Team went for it and failed on fourth down.
+The game ends in a tie. Kicking Team: 3, Receiving Team: 3.  0:00 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Kicking Team,1,0,0,7,['TOUCHDOWN'],3,['FIELD_GOAL'],1,1,33.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:52 Remaining
+Receiving Team starts their drive at their own 48 yardline
+Receiving Team kicks a field goal.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 3.  4:59 Remaining
+Kicking Team starts their drive at their own 24 yardline
+Kicking Team scores a touchdown.
+Extra point is good.
+Kicking Team wins. Kicking Team: 7, Receiving Team: 3.  0:33 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Kicking Team,1,0,0,6,['TOUCHDOWN'],3,['FIELD_GOAL'],1,1,131.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:55 Remaining
+Receiving Team starts their drive at their own 26 yardline
+Receiving Team kicks a field goal.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 3.  6:18 Remaining
+Kicking Team starts their drive at their own 32 yardline
+Kicking Team scores a touchdown.
+Extra point failed.
+Kicking Team wins. Kicking Team: 6, Receiving Team: 3.  2:11 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,0,['DOWNS'],7,['TOUCHDOWN'],1,1,287.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  10:00 Remaining
+Receiving Team starts their drive at their own 35 yardline
+Receiving Team scores a touchdown.
+Extra point is good.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 7.  6:27 Remaining
+Kicking Team starts their drive at their own 35 yardline
+Kicking Team turns the ball over via DOWNS.
+Receiving Team wins. Kicking Team: 0, Receiving Team: 7.  4:47 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Kicking Team,1,0,0,7,"['PUNT', 'TOUCHDOWN']",3,['FIELD_GOAL'],1,1,199.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  10:00 Remaining
+Receiving Team starts their drive at their own 35 yardline
+Receiving Team kicks a field goal.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 3.  5:24 Remaining
+Kicking Team starts their drive at their own 27 yardline
+Kicking Team went for it and succeeded on fourth down.
+Kicking Team starts their drive at their own 38.0 yardline
+Kicking Team scores a touchdown.
+Extra point is good.
+Kicking Team wins. Kicking Team: 7, Receiving Team: 3.  3:19 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,6,['TOUCHDOWN'],7,['TOUCHDOWN'],1,1,224.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:55 Remaining
+Receiving Team starts their drive at their own 30 yardline
+Receiving Team scores a touchdown.
+Extra point is good.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 7.  3:56 Remaining
+Kicking Team starts their drive at their own 27 yardline
+Kicking Team scores a touchdown.
+Two point conversion failed.
+Receiving Team wins. Kicking Team: 6, Receiving Team: 7.  3:44 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Kicking Team,1,0,0,7,['TOUCHDOWN'],3,['FIELD_GOAL'],1,1,194.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:55 Remaining
+Receiving Team starts their drive at their own 25 yardline
+Receiving Team kicks a field goal.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 3.  5:40 Remaining
+Kicking Team starts their drive at their own 33 yardline
+Kicking Team scores a touchdown.
+Extra point is good.
+Kicking Team wins. Kicking Team: 7, Receiving Team: 3.  3:14 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,6,['TOUCHDOWN'],7,['TOUCHDOWN'],1,1,191.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:56 Remaining
+Receiving Team starts their drive at their own 37 yardline
+Receiving Team scores a touchdown.
+Extra point is good.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 7.  4:55 Remaining
+Kicking Team starts their drive at their own 35 yardline
+Kicking Team scores a touchdown.
+Two point conversion failed.
+Receiving Team wins. Kicking Team: 6, Receiving Team: 7.  3:11 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,0,['PUNT'],3,['FIELD_GOAL'],1,1,298.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  10:00 Remaining
+Receiving Team starts their drive at their own 20 yardline
+Receiving Team kicks a field goal.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 3.  6:16 Remaining
+Kicking Team starts their drive at their own 23 yardline
+Kicking Team went for it and failed on fourth down.
+Receiving Team wins. Kicking Team: 0, Receiving Team: 3.  4:58 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,0,['INTERCEPTION'],3,['FIELD_GOAL'],1,1,232.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:54 Remaining
+Receiving Team starts their drive at their own 26 yardline
+Receiving Team kicks a field goal.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 3.  6:14 Remaining
+Kicking Team starts their drive at their own 20 yardline
+Kicking Team turns the ball over via INTERCEPTION.
+Receiving Team wins. Kicking Team: 0, Receiving Team: 3.  3:52 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,0,"['PUNT', 'DOWNS']",3,"['MISSED_FG', 'PUNT', 'FIELD_GOAL']",2,3,0.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:51 Remaining
+Receiving Team starts their drive at their own 40 yardline
+Receiving Team turns the ball over via MISSED_FG.
+Kicking Team: 0, Receiving Team: 0.  7:49 Remaining
+Kicking Team starts their drive at their own 37.0 yardline
+Kicking Team punts.
+Kicking Team: 0, Receiving Team: 0.  5:35 Remaining
+Receiving Team starts their drive at their own 4.0 yardline
+Receiving Team punts.
+Kicking Team: 0, Receiving Team: 0.  2:34 Remaining
+Kicking Team starts their drive at their own 25.0 yardline
+Kicking Team turns the ball over via DOWNS.
+Kicking Team: 0, Receiving Team: 0.  0:43 Remaining
+Receiving Team starts their drive at their own 25.0 yardline
+Receiving Team kicks a field goal.
+Receiving Team wins. Kicking Team: 0, Receiving Team: 3.  0:00 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,0,['MISSED_FG'],3,"['PUNT', 'FIELD_GOAL']",1,2,128.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:54 Remaining
+Receiving Team starts their drive at their own 35 yardline
+Receiving Team punts.
+Kicking Team: 0, Receiving Team: 0.  8:52 Remaining
+Kicking Team starts their drive at their own 23.0 yardline
+Kicking Team turns the ball over via MISSED_FG.
+Kicking Team: 0, Receiving Team: 0.  4:27 Remaining
+Receiving Team starts their drive at their own 38.0 yardline
+Receiving Team kicks a field goal.
+Receiving Team wins. Kicking Team: 0, Receiving Team: 3.  2:08 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,0,['INTERCEPTION'],3,"['PUNT', 'FIELD_GOAL']",1,2,288.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:56 Remaining
+Receiving Team starts their drive at their own 25 yardline
+Receiving Team punts.
+Kicking Team: 0, Receiving Team: 0.  7:54 Remaining
+Kicking Team starts their drive at their own 27.0 yardline
+Kicking Team turns the ball over via INTERCEPTION.
+Kicking Team: 0, Receiving Team: 0.  7:02 Remaining
+Receiving Team starts their drive at their own 36.0 yardline
+Receiving Team kicks a field goal.
+Receiving Team wins. Kicking Team: 0, Receiving Team: 3.  4:48 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,0,['INTERCEPTION'],7,['TOUCHDOWN'],1,1,215.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:56 Remaining
+Receiving Team starts their drive at their own 32 yardline
+Receiving Team scores a touchdown.
+Extra point is good.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 7.  4:16 Remaining
+Kicking Team starts their drive at their own 20 yardline
+Kicking Team turns the ball over via INTERCEPTION.
+Receiving Team wins. Kicking Team: 0, Receiving Team: 7.  3:35 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Kicking Team,1,0,0,3,['FIELD_GOAL'],0,['PUNT'],1,1,63.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:54 Remaining
+Receiving Team starts their drive at their own 27 yardline
+Receiving Team punts.
+Kicking Team: 0, Receiving Team: 0.  7:31 Remaining
+Kicking Team starts their drive at their own 33.0 yardline
+Kicking Team kicks a field goal.
+Kicking Team wins. Kicking Team: 3, Receiving Team: 0.  1:03 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Kicking Team,1,0,0,3,['FIELD_GOAL'],0,['INTERCEPTION'],1,1,416.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:54 Remaining
+Receiving Team starts their drive at their own 33 yardline
+Receiving Team turns the ball over via INTERCEPTION.
+Kicking Team: 0, Receiving Team: 0.  9:40 Remaining
+Kicking Team starts their drive at the opponents 35.0 yardline
+Kicking Team kicks a field goal.
+Kicking Team wins. Kicking Team: 3, Receiving Team: 0.  6:56 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,0,['PUNT'],7,['TOUCHDOWN'],1,1,192.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:56 Remaining
+Receiving Team starts their drive at their own 24 yardline
+Receiving Team scores a touchdown.
+Extra point is good.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 7.  4:52 Remaining
+Kicking Team starts their drive at their own 32 yardline
+Kicking Team went for it and failed on fourth down.
+Receiving Team wins. Kicking Team: 0, Receiving Team: 7.  3:12 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,0,['PUNT'],7,['TOUCHDOWN'],1,1,301.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:59 Remaining
+Receiving Team starts their drive at the opponents 48 yardline
+Receiving Team scores a touchdown.
+Extra point is good.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 7.  6:59 Remaining
+Kicking Team starts their drive at their own 9 yardline
+Kicking Team went for it and failed on fourth down.
+Receiving Team wins. Kicking Team: 0, Receiving Team: 7.  5:01 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Kicking Team,1,0,0,7,"['INTERCEPTION', 'TOUCHDOWN']",0,"['PUNT', 'MISSED_FG']",2,2,51.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:54 Remaining
+Receiving Team starts their drive at their own 14 yardline
+Receiving Team punts.
+Kicking Team: 0, Receiving Team: 0.  8:19 Remaining
+Kicking Team starts their drive at their own 24.0 yardline
+Kicking Team turns the ball over via INTERCEPTION.
+Kicking Team: 0, Receiving Team: 0.  4:44 Remaining
+Receiving Team starts their drive at the opponents 47.0 yardline
+Receiving Team turns the ball over via MISSED_FG.
+Kicking Team: 0, Receiving Team: 0.  2:04 Remaining
+Kicking Team starts their drive at their own 35.0 yardline
+Kicking Team scores a touchdown.
+Extra point is good.
+Kicking Team wins. Kicking Team: 7, Receiving Team: 0.  0:51 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,0,['PUNT'],3,"['PUNT', 'FIELD_GOAL']",1,2,353.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  10:00 Remaining
+Receiving Team starts their drive at their own 35 yardline
+Receiving Team punts.
+Kicking Team: 0, Receiving Team: 0.  8:25 Remaining
+Kicking Team starts their drive at their own 20.0 yardline
+Kicking Team punts.
+Kicking Team: 0, Receiving Team: 0.  8:03 Remaining
+Receiving Team starts their drive at their own 26.0 yardline
+Receiving Team kicks a field goal.
+Receiving Team wins. Kicking Team: 0, Receiving Team: 3.  5:53 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,0,['PUNT'],3,"['PUNT', 'FIELD_GOAL']",1,2,160.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:53 Remaining
+Receiving Team starts their drive at their own 31 yardline
+Receiving Team punts.
+Kicking Team: 0, Receiving Team: 0.  8:58 Remaining
+Kicking Team starts their drive at their own 26.0 yardline
+Kicking Team punts.
+Kicking Team: 0, Receiving Team: 0.  6:42 Remaining
+Receiving Team starts their drive at their own 13.0 yardline
+Receiving Team kicks a field goal.
+Receiving Team wins. Kicking Team: 0, Receiving Team: 3.  2:40 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,TIE,0,0,1,0,"['PUNT', 'FUMBLE', 'MISSED_FG']",0,"['PUNT', 'PUNT', 'DOWNS']",3,3,0.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:54 Remaining
+Receiving Team starts their drive at their own 18 yardline
+Receiving Team punts.
+Kicking Team: 0, Receiving Team: 0.  8:18 Remaining
+Kicking Team starts their drive at their own 18.0 yardline
+Kicking Team punts.
+Kicking Team: 0, Receiving Team: 0.  6:43 Remaining
+Receiving Team starts their drive at their own 13.0 yardline
+Receiving Team punts.
+Kicking Team: 0, Receiving Team: 0.  4:50 Remaining
+Kicking Team starts their drive at their own 38.0 yardline
+Kicking Team turns the ball over via FUMBLE.
+Kicking Team: 0, Receiving Team: 0.  3:11 Remaining
+Receiving Team starts their drive at the opponents 39.0 yardline
+Receiving Team turns the ball over via DOWNS.
+Kicking Team: 0, Receiving Team: 0.  2:52 Remaining
+Kicking Team starts their drive at their own 30.0 yardline
+Kicking Team turns the ball over via MISSED_FG.
+The game ends in a tie. Kicking Team: 0, Receiving Team: 0.  0:00 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Kicking Team,1,0,0,6,"['FIELD_GOAL', 'FIELD_GOAL']",3,"['FIELD_GOAL', 'PUNT']",2,2,16.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  10:00 Remaining
+Receiving Team starts their drive at their own 35 yardline
+Receiving Team kicks a field goal.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 3.  5:15 Remaining
+Kicking Team starts their drive at their own 35 yardline
+Kicking Team kicks a field goal.
+Kicking Team kicks off. 
+Kicking Team: 3, Receiving Team: 3.  3:43 Remaining
+Receiving Team starts their drive at their own 20 yardline
+Receiving Team punts.
+Kicking Team: 3, Receiving Team: 3.  2:07 Remaining
+Kicking Team starts their drive at their own 12.0 yardline
+Kicking Team kicks a field goal.
+Kicking Team wins. Kicking Team: 6, Receiving Team: 3.  0:16 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Kicking Team,1,0,0,3,['FIELD_GOAL'],0,['PUNT'],1,1,0.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  10:00 Remaining
+Receiving Team starts their drive at their own 35 yardline
+Receiving Team punts.
+Kicking Team: 0, Receiving Team: 0.  6:31 Remaining
+Kicking Team starts their drive at their own 12.0 yardline
+Kicking Team kicks a field goal.
+Kicking Team wins. Kicking Team: 3, Receiving Team: 0.  0:00 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,0,['PUNT'],3,"['PUNT', 'FIELD_GOAL']",1,2,176.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:55 Remaining
+Receiving Team starts their drive at their own 26 yardline
+Receiving Team punts.
+Kicking Team: 0, Receiving Team: 0.  8:06 Remaining
+Kicking Team starts their drive at their own 3.0 yardline
+Kicking Team punts.
+Kicking Team: 0, Receiving Team: 0.  7:44 Remaining
+Receiving Team starts their drive at their own 45.0 yardline
+Receiving Team kicks a field goal.
+Receiving Team wins. Kicking Team: 0, Receiving Team: 3.  2:56 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Kicking Team,1,0,0,7,['TOUCHDOWN'],0,['INTERCEPTION'],1,1,440.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:54 Remaining
+Receiving Team starts their drive at their own 28 yardline
+Receiving Team turns the ball over via INTERCEPTION.
+Kicking Team: 0, Receiving Team: 0.  9:46 Remaining
+Kicking Team starts their drive at the opponents 21.0 yardline
+Kicking Team scores a touchdown.
+Extra point is good.
+Kicking Team wins. Kicking Team: 7, Receiving Team: 0.  7:20 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,0,['PUNT'],3,"['PUNT', 'FIELD_GOAL']",1,2,102.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:55 Remaining
+Receiving Team starts their drive at their own 29 yardline
+Receiving Team punts.
+Kicking Team: 0, Receiving Team: 0.  8:27 Remaining
+Kicking Team starts their drive at their own 15.0 yardline
+Kicking Team punts.
+Kicking Team: 0, Receiving Team: 0.  6:25 Remaining
+Receiving Team starts their drive at the opponents 45.0 yardline
+Receiving Team kicks a field goal.
+Receiving Team wins. Kicking Team: 0, Receiving Team: 3.  1:42 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,6,['TOUCHDOWN'],7,['TOUCHDOWN'],1,1,263.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:55 Remaining
+Receiving Team starts their drive at their own 32 yardline
+Receiving Team scores a touchdown.
+Extra point is good.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 7.  5:55 Remaining
+Kicking Team starts their drive at their own 27 yardline
+Kicking Team scores a touchdown.
+Two point conversion failed.
+Receiving Team wins. Kicking Team: 6, Receiving Team: 7.  4:23 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,6,['TOUCHDOWN'],7,['TOUCHDOWN'],1,1,48.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:55 Remaining
+Receiving Team starts their drive at their own 26 yardline
+Receiving Team scores a touchdown.
+Extra point is good.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 7.  1:50 Remaining
+Kicking Team starts their drive at their own 35 yardline
+Kicking Team scores a touchdown.
+Two point conversion failed.
+Receiving Team wins. Kicking Team: 6, Receiving Team: 7.  0:48 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,0,['INTERCEPTION'],7,['TOUCHDOWN'],1,1,113.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  10:00 Remaining
+Receiving Team starts their drive at their own 35 yardline
+Receiving Team scores a touchdown.
+Extra point is good.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 7.  4:16 Remaining
+Kicking Team starts their drive at their own 29 yardline
+Kicking Team turns the ball over via INTERCEPTION.
+Receiving Team wins. Kicking Team: 0, Receiving Team: 7.  1:53 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Kicking Team,1,0,0,3,['FIELD_GOAL'],0,['PUNT'],1,1,165.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:55 Remaining
+Receiving Team starts their drive at their own 29 yardline
+Receiving Team punts.
+Kicking Team: 0, Receiving Team: 0.  6:30 Remaining
+Kicking Team starts their drive at their own 20.0 yardline
+Kicking Team kicks a field goal.
+Kicking Team wins. Kicking Team: 3, Receiving Team: 0.  2:45 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,0,['PUNT'],3,['FIELD_GOAL'],1,1,296.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:54 Remaining
+Receiving Team starts their drive at their own 37 yardline
+Receiving Team kicks a field goal.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 3.  8:26 Remaining
+Kicking Team starts their drive at their own 40 yardline
+Kicking Team went for it and failed on fourth down.
+Receiving Team wins. Kicking Team: 0, Receiving Team: 3.  4:56 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Kicking Team,1,0,0,7,['TOUCHDOWN'],3,['FIELD_GOAL'],1,1,194.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:56 Remaining
+Receiving Team starts their drive at their own 30 yardline
+Receiving Team kicks a field goal.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 3.  6:09 Remaining
+Kicking Team starts their drive at their own 26 yardline
+Kicking Team scores a touchdown.
+Extra point is good.
+Kicking Team wins. Kicking Team: 7, Receiving Team: 3.  3:14 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Kicking Team,1,0,0,7,['TOUCHDOWN'],3,['FIELD_GOAL'],1,1,144.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:55 Remaining
+Receiving Team starts their drive at their own 25 yardline
+Receiving Team kicks a field goal.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 3.  4:26 Remaining
+Kicking Team starts their drive at their own 35 yardline
+Kicking Team scores a touchdown.
+Extra point is good.
+Kicking Team wins. Kicking Team: 7, Receiving Team: 3.  2:24 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,0,['DOWNS'],7,['TOUCHDOWN'],1,1,139.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:55 Remaining
+Receiving Team starts their drive at their own 30 yardline
+Receiving Team scores a touchdown.
+Extra point is good.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 7.  3:53 Remaining
+Kicking Team starts their drive at their own 37 yardline
+Kicking Team turns the ball over via DOWNS.
+Receiving Team wins. Kicking Team: 0, Receiving Team: 7.  2:19 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,TIE,0,0,1,0,"['PUNT', 'PUNT']",0,"['PUNT', 'PUNT', 'END_GAME']",2,3,0.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:54 Remaining
+Receiving Team starts their drive at their own 43 yardline
+Receiving Team punts.
+Kicking Team: 0, Receiving Team: 0.  8:11 Remaining
+Kicking Team starts their drive at their own 20.0 yardline
+Kicking Team punts.
+Kicking Team: 0, Receiving Team: 0.  7:03 Remaining
+Receiving Team starts their drive at their own 10.0 yardline
+Receiving Team punts.
+Kicking Team: 0, Receiving Team: 0.  1:45 Remaining
+Kicking Team starts their drive at their own 11.0 yardline
+Kicking Team punts.
+Kicking Team: 0, Receiving Team: 0.  0:43 Remaining
+Receiving Team starts their drive at their own 41.0 yardline
+Time runs out.
+The game ends in a tie. Kicking Team: 0, Receiving Team: 0.  0:00 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,0,['INTERCEPTION'],3,['FIELD_GOAL'],1,1,262.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:55 Remaining
+Receiving Team starts their drive at their own 26 yardline
+Receiving Team kicks a field goal.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 3.  6:15 Remaining
+Kicking Team starts their drive at their own 35 yardline
+Kicking Team turns the ball over via INTERCEPTION.
+Receiving Team wins. Kicking Team: 0, Receiving Team: 3.  4:22 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,0,['DOWNS'],3,"['PUNT', 'FIELD_GOAL']",1,2,193.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:56 Remaining
+Receiving Team starts their drive at their own 27 yardline
+Receiving Team punts.
+Kicking Team: 0, Receiving Team: 0.  7:44 Remaining
+Kicking Team starts their drive at their own 21.0 yardline
+Kicking Team turns the ball over via DOWNS.
+Kicking Team: 0, Receiving Team: 0.  4:03 Remaining
+Receiving Team starts their drive at their own 36.0 yardline
+Receiving Team kicks a field goal.
+Receiving Team wins. Kicking Team: 0, Receiving Team: 3.  3:13 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,0,['INTERCEPTION'],7,['TOUCHDOWN'],1,1,209.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:54 Remaining
+Receiving Team starts their drive at their own 33 yardline
+Receiving Team scores a touchdown.
+Extra point is good.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 7.  3:36 Remaining
+Kicking Team starts their drive at their own 35 yardline
+Kicking Team turns the ball over via INTERCEPTION.
+Receiving Team wins. Kicking Team: 0, Receiving Team: 7.  3:29 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,0,['PUNT'],7,"['FUMBLE', 'TOUCHDOWN']",1,2,222.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:54 Remaining
+Receiving Team starts their drive at their own 30 yardline
+Receiving Team turns the ball over via FUMBLE.
+Kicking Team: 0, Receiving Team: 0.  5:47 Remaining
+Kicking Team starts their drive at their own 33.0 yardline
+Kicking Team punts.
+Kicking Team: 0, Receiving Team: 0.  3:53 Remaining
+Receiving Team starts their drive at the opponents 15.0 yardline
+Receiving Team scores a touchdown.
+Extra point is good.
+Receiving Team wins. Kicking Team: 0, Receiving Team: 7.  3:42 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,0,['PUNT'],7,"['PUNT', 'TOUCHDOWN']",1,2,431.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:54 Remaining
+Receiving Team starts their drive at their own 34 yardline
+Receiving Team punts.
+Kicking Team: 0, Receiving Team: 0.  8:59 Remaining
+Kicking Team starts their drive at their own 26.0 yardline
+Kicking Team punts.
+Kicking Team: 0, Receiving Team: 0.  8:04 Remaining
+Receiving Team starts their drive at their own 26.0 yardline
+Receiving Team scores a touchdown.
+Extra point is good.
+Receiving Team wins. Kicking Team: 0, Receiving Team: 7.  7:11 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,0,['INTERCEPTION'],7,['TOUCHDOWN'],1,1,395.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:55 Remaining
+Receiving Team starts their drive at their own 27 yardline
+Receiving Team scores a touchdown.
+Extra point is good.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 7.  7:25 Remaining
+Kicking Team starts their drive at their own 32 yardline
+Kicking Team turns the ball over via INTERCEPTION.
+Receiving Team wins. Kicking Team: 0, Receiving Team: 7.  6:35 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,0,"['FIELD_GOAL', 'INTERCEPTION']",7,['TOUCHDOWN'],1,1,17.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  10:00 Remaining
+Receiving Team starts their drive at their own 40 yardline
+Receiving Team scores a touchdown.
+Extra point is good.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 7.  5:20 Remaining
+Kicking Team starts their drive at their own 30 yardline
+Kicking Team went for it and succeeded on fourth down.
+Kicking Team starts their drive at the opponents 1 yardline
+Kicking Team turns the ball over via INTERCEPTION.
+Receiving Team wins. Kicking Team: 0, Receiving Team: 7.  0:17 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,TIE,0,0,1,3,['FIELD_GOAL'],3,"['FIELD_GOAL', 'END_GAME']",1,2,0.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:56 Remaining
+Receiving Team starts their drive at their own 29 yardline
+Receiving Team kicks a field goal.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 3.  6:21 Remaining
+Kicking Team starts their drive at their own 35 yardline
+Kicking Team kicks a field goal.
+Kicking Team kicks off. 
+Kicking Team: 3, Receiving Team: 3.  1:50 Remaining
+Receiving Team starts their drive at their own 34 yardline
+Time runs out.
+The game ends in a tie. Kicking Team: 3, Receiving Team: 3.  0:00 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Kicking Team,1,0,0,3,"['FUMBLE', 'FIELD_GOAL']",0,"['FUMBLE', 'FUMBLE']",2,2,35.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:55 Remaining
+Receiving Team starts their drive at their own 30 yardline
+Receiving Team turns the ball over via FUMBLE.
+Kicking Team: 0, Receiving Team: 0.  6:29 Remaining
+Kicking Team starts their drive at the opponents 38.0 yardline
+Kicking Team turns the ball over via FUMBLE.
+Kicking Team: 0, Receiving Team: 0.  6:12 Remaining
+Receiving Team starts their drive at the opponents 48.0 yardline
+Receiving Team turns the ball over via FUMBLE.
+Kicking Team: 0, Receiving Team: 0.  3:45 Remaining
+Kicking Team starts their drive at their own 17.0 yardline
+Kicking Team kicks a field goal.
+Kicking Team wins. Kicking Team: 3, Receiving Team: 0.  0:35 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,0,['FUMBLE'],3,['FIELD_GOAL'],1,1,288.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:53 Remaining
+Receiving Team starts their drive at their own 45 yardline
+Receiving Team kicks a field goal.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 3.  6:05 Remaining
+Kicking Team starts their drive at their own 31 yardline
+Kicking Team turns the ball over via FUMBLE.
+Receiving Team wins. Kicking Team: 0, Receiving Team: 3.  4:48 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Kicking Team,1,0,0,3,['FIELD_GOAL'],0,['INTERCEPTION'],1,1,453.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:54 Remaining
+Receiving Team starts their drive at their own 27 yardline
+Receiving Team turns the ball over via INTERCEPTION.
+Kicking Team: 0, Receiving Team: 0.  9:46 Remaining
+Kicking Team starts their drive at the opponents 21.0 yardline
+Kicking Team kicks a field goal.
+Kicking Team wins. Kicking Team: 3, Receiving Team: 0.  7:33 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,TIE,0,0,1,0,['END_GAME'],0,['INTERCEPTION'],1,1,0.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:55 Remaining
+Receiving Team starts their drive at their own 26 yardline
+Receiving Team turns the ball over via INTERCEPTION.
+Kicking Team: 0, Receiving Team: 0.  5:29 Remaining
+Kicking Team starts their drive at the opponents 49.0 yardline
+Time runs out.
+The game ends in a tie. Kicking Team: 0, Receiving Team: 0.  0:00 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Kicking Team,1,0,0,7,['TOUCHDOWN'],3,['FIELD_GOAL'],1,1,234.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:55 Remaining
+Receiving Team starts their drive at their own 31 yardline
+Receiving Team kicks a field goal.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 3.  7:19 Remaining
+Kicking Team starts their drive at their own 35 yardline
+Kicking Team scores a touchdown.
+Extra point is good.
+Kicking Team wins. Kicking Team: 7, Receiving Team: 3.  3:54 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Kicking Team,1,0,0,3,['FIELD_GOAL'],0,['PUNT'],1,1,162.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  10:00 Remaining
+Receiving Team starts their drive at their own 35 yardline
+Receiving Team punts.
+Kicking Team: 0, Receiving Team: 0.  6:31 Remaining
+Kicking Team starts their drive at their own 12.0 yardline
+Kicking Team kicks a field goal.
+Kicking Team wins. Kicking Team: 3, Receiving Team: 0.  2:42 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Kicking Team,1,0,0,7,['TOUCHDOWN'],0,['PUNT'],1,1,301.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:55 Remaining
+Receiving Team starts their drive at their own 35 yardline
+Receiving Team punts.
+Kicking Team: 0, Receiving Team: 0.  7:54 Remaining
+Kicking Team starts their drive at their own 16.0 yardline
+Kicking Team scores a touchdown.
+Extra point is good.
+Kicking Team wins. Kicking Team: 7, Receiving Team: 0.  5:01 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,0,['INTERCEPTION'],3,"['PUNT', 'FIELD_GOAL']",1,2,76.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:59 Remaining
+Receiving Team starts their drive at the opponents 48 yardline
+Receiving Team punts.
+Kicking Team: 0, Receiving Team: 0.  7:59 Remaining
+Kicking Team starts their drive at their own 20.0 yardline
+Kicking Team turns the ball over via INTERCEPTION.
+Kicking Team: 0, Receiving Team: 0.  5:44 Remaining
+Receiving Team starts their drive at the opponents 21.0 yardline
+Receiving Team kicks a field goal.
+Receiving Team wins. Kicking Team: 0, Receiving Team: 3.  1:16 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,0,['INTERCEPTION'],3,"['PUNT', 'FIELD_GOAL']",1,2,160.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:55 Remaining
+Receiving Team starts their drive at their own 25 yardline
+Receiving Team punts.
+Kicking Team: 0, Receiving Team: 0.  7:37 Remaining
+Kicking Team starts their drive at their own 5.0 yardline
+Kicking Team turns the ball over via INTERCEPTION.
+Kicking Team: 0, Receiving Team: 0.  5:46 Remaining
+Receiving Team starts their drive at the opponents 23.0 yardline
+Receiving Team kicks a field goal.
+Receiving Team wins. Kicking Team: 0, Receiving Team: 3.  2:40 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Kicking Team,1,0,0,3,['FIELD_GOAL'],0,['INTERCEPTION'],1,1,175.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:59 Remaining
+Receiving Team starts their drive at the opponents 45 yardline
+Receiving Team turns the ball over via INTERCEPTION.
+Kicking Team: 0, Receiving Team: 0.  6:44 Remaining
+Kicking Team starts their drive at their own 14.0 yardline
+Kicking Team kicks a field goal.
+Kicking Team wins. Kicking Team: 3, Receiving Team: 0.  2:55 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,0,['DOWNS'],3,['FIELD_GOAL'],1,1,195.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:56 Remaining
+Receiving Team starts their drive at their own 33 yardline
+Receiving Team kicks a field goal.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 3.  5:18 Remaining
+Kicking Team starts their drive at their own 36 yardline
+Kicking Team turns the ball over via DOWNS.
+Receiving Team wins. Kicking Team: 0, Receiving Team: 3.  3:15 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Kicking Team,1,0,0,3,['FIELD_GOAL'],0,['PUNT'],1,1,190.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:54 Remaining
+Receiving Team starts their drive at their own 20 yardline
+Receiving Team punts.
+Kicking Team: 0, Receiving Team: 0.  7:56 Remaining
+Kicking Team starts their drive at their own 23.0 yardline
+Kicking Team kicks a field goal.
+Kicking Team wins. Kicking Team: 3, Receiving Team: 0.  3:10 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,TIE,0,0,1,0,"['PUNT', 'END_GAME']",0,"['FUMBLE', 'PUNT']",2,2,0.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:52 Remaining
+Receiving Team starts their drive at their own 30 yardline
+Receiving Team turns the ball over via FUMBLE.
+Kicking Team: 0, Receiving Team: 0.  5:45 Remaining
+Kicking Team starts their drive at their own 33.0 yardline
+Kicking Team punts.
+Kicking Team: 0, Receiving Team: 0.  4:15 Remaining
+Receiving Team starts their drive at their own 20.0 yardline
+Receiving Team punts.
+Kicking Team: 0, Receiving Team: 0.  2:51 Remaining
+Kicking Team starts their drive at their own 20.0 yardline
+Time runs out.
+The game ends in a tie. Kicking Team: 0, Receiving Team: 0.  0:00 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Kicking Team,1,0,0,3,"['PUNT', 'FIELD_GOAL']",0,"['INTERCEPTION', 'PUNT']",2,2,81.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:55 Remaining
+Receiving Team starts their drive at their own 26 yardline
+Receiving Team turns the ball over via INTERCEPTION.
+Kicking Team: 0, Receiving Team: 0.  9:54 Remaining
+Kicking Team starts their drive at their own 25.0 yardline
+Kicking Team punts.
+Kicking Team: 0, Receiving Team: 0.  8:10 Remaining
+Receiving Team starts their drive at their own 32.0 yardline
+Receiving Team punts.
+Kicking Team: 0, Receiving Team: 0.  7:03 Remaining
+Kicking Team starts their drive at their own 2.0 yardline
+Kicking Team kicks a field goal.
+Kicking Team wins. Kicking Team: 3, Receiving Team: 0.  1:21 Remaining
+"
+Kicking Team,Receiving Team,Kicking Team,Receiving Team,0,1,0,0,['INTERCEPTION'],7,['TOUCHDOWN'],1,1,469.0,"Kicking Team kicks off. 
+Kicking Team: 0, Receiving Team: 0.  9:59 Remaining
+Receiving Team starts their drive at the opponents 50 yardline
+Receiving Team scores a touchdown.
+Extra point is good.
+Receiving Team kicks off. 
+Kicking Team: 0, Receiving Team: 7.  9:49 Remaining
+Kicking Team starts their drive at their own 35 yardline
+Kicking Team turns the ball over via INTERCEPTION.
+Receiving Team wins. Kicking Team: 0, Receiving Team: 7.  7:49 Remaining
+"

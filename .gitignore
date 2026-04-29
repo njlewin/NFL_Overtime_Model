@@ -1,4 +1,3 @@
 ﻿.venv/
 /data/pbp_data.parquet
-/output/*.csv
 /output/*.parquet

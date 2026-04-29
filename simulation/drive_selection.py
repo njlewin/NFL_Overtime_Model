@@ -17,17 +17,15 @@ def select_drive(drive_list: pd.DataFrame, yardline: float, time_remaining: floa
 
     # --- Normalization constants ---
     MAX_YARDLINE = 99.0
-    MAX_TIME = overtime_length(season)
-    OT_LENGTH = overtime_length(season)  # 10 min OT period
+    MAX_TIME = 60*60
     MAX_SCORE_DIFF = 7.0
-    TIME_LAMBDA = 0.004  # controls how aggressively late-game time is weighted
 
     # --- Weights ---
     W_YARDLINE = 0.4
     W_TIME = 0.4
     W_SCORE = 0.2
 
-    RETURN_COUNT = 100
+    RETURN_COUNT = 50
 
     # --- Compute deltas (normalized) ---
     d_yardline = (drive_list["start_yardline"] - yardline) / drive_list["start_yardline"].std()
@@ -47,3 +45,4 @@ def select_drive(drive_list: pd.DataFrame, yardline: float, time_remaining: floa
     candidates = drive_list.loc[top_idx]
     # --- Random sample from candidates ---
     return candidates.sample(1).iloc[0], candidates
+
