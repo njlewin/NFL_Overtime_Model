@@ -16,8 +16,6 @@ def select_drive(drive_list: pd.DataFrame, yardline: float, time_remaining: floa
     """
 
     # --- Normalization constants ---
-    MAX_YARDLINE = 99.0
-    MAX_TIME = 60*60
     MAX_SCORE_DIFF = 7.0
 
     # --- Weights ---
