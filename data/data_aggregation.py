@@ -4,6 +4,8 @@ import os
 from config import *
 
 
+# Aggregate play-by-play data at the drive level.
+# Produces a dataframe with the starting information for every historical drive along with the result
 def aggregate_drives(pbp_df):
     # Filter plays
     df = pbp_df[
@@ -70,6 +72,7 @@ def aggregate_drives(pbp_df):
     print('Drives aggregated')
     return df
 
+# Aggregrate Kickoff results, produces a dataframe with all historical outcomes from kickoffs
 def aggregate_kos(pbp_df):
     kickoff_mask = pbp_df['play_type'] == 'kickoff'
     kickoff_i = pbp_df.index[kickoff_mask]
@@ -93,6 +96,8 @@ def aggregate_kos(pbp_df):
     print('Kickoffs aggregated')
     return kickoff_results
 
+# Aggregates extra point and conversion attempts
+# Produces a dataframe withe the extra point and two point conversion success rates.
 def aggregate_conversions(pbp_df):
     eps = pbp_df['extra_point_result'].value_counts()
     tpcs = pbp_df['two_point_conv_result'].value_counts()
@@ -103,19 +108,22 @@ def aggregate_conversions(pbp_df):
 
     print('Aggregated extra-point and two-point conversion rates.')
 
-def import_pbp_data (most_recent_season = 2025, look_back = 10, force_refresh = False):
-    # Import nfl play by play data.
+# Loads NFL play-by-play data
+def import_pbp_data (most_recent_season = 2025, look_back = 25, force_refresh = False):
+    # If the pbp data is not present or we are forcing a refresh.
     if not os.path.isfile(PBP_FILE) or force_refresh:
         pbp_df = nfl.import_pbp_data(years=[most_recent_season - i for i in range(look_back)], downcast=True).copy()
         pbp_df = pbp_df.sort_values(['game_id', 'game_seconds_remaining','play_id'], ascending=[True, False, True])
         pbp_df['play_duration'] = pbp_df.groupby('game_id')['game_seconds_remaining'].diff(-1)
         pbp_df.to_parquet(PBP_FILE)
         print("Wrote pbp file")
+    # if the data is available, simply load it
     else:
         pbp_df = pd.read_parquet(PBP_FILE)
         print("Loaded pbp data")
     return pbp_df
 
+# Aggregate historical fourth down attempts
 def aggregate_fourth_down_attempts(pbp_df):
     df = pbp_df[(pbp_df['fourth_down_converted']==1) | (pbp_df['fourth_down_failed'] ==1)].copy()
     df['off_td'] = df['posteam'] == df['td_team']
@@ -126,6 +134,8 @@ def aggregate_fourth_down_attempts(pbp_df):
 
     print('Fourth down attempts aggregated')
 
+
+# Run all aggregations
 if __name__ == "__main__":
     pbp_df = import_pbp_data(most_recent_season = 2025, look_back = 25, force_refresh = False)
     aggregate_drives(pbp_df)

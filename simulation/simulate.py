@@ -1,6 +1,6 @@
 from pathlib import Path
 import pandas as pd
-from simulation.overtime_period import Overtime_Period
+from simulation.overtime_period import OvertimePeriod
 from multiprocessing import Pool, cpu_count
 from config import *
 import time
@@ -8,17 +8,17 @@ import time
 
 def run_simulation(args):
     season, goforit_2pc, goforit_fg,  = args
-    OT = Overtime_Period('Kicking Team', 'Receiving Team', 'Kicking Team', season, goforit_2pc, goforit_fg)
-    OT.simulate()
-    return OT.result()
+    ot = OvertimePeriod('Kicking Team', 'Receiving Team', 'Kicking Team', season, goforit_2pc, goforit_fg)
+    ot.simulate()
+    return ot.result()
 
 def run_simulation_batch(args):
     season, goforit_2pc, goforit_fg, batch_size = args
     results = []
     for _ in range(batch_size):
-        OT = Overtime_Period('Kicking Team', 'Receiving Team', 'Kicking Team', season, goforit_2pc, goforit_fg)
-        OT.simulate()
-        results.append(OT.result())
+        ot = OvertimePeriod('Kicking Team', 'Receiving Team', 'Kicking Team', season, goforit_2pc, goforit_fg)
+        ot.simulate()
+        results.append(ot.result())
     return results
 
 def simulate_overtimes(season, n, goforit_2pc=False, goforit_fg =False, write_output=False, pool=None):
@@ -40,8 +40,9 @@ if __name__ == '__main__':
 
     # Part 1: Run simulations across years with only conservative decisions
 
-    seasons = [2011, 2013, 2016, 2021, 2024, 2025]
-    n1 = SIM_NUM
+    seasons = [2011, 2013, 2016, 2021, 2024, current_season]
+    #seasons = [current_season]
+    n1 = 100#SIM_NUM
     with Pool(cpu_count()) as pool:
         dfs1 = []
         for season in seasons:
@@ -58,20 +59,20 @@ if __name__ == '__main__':
 
 
         result = pd.concat(dfs1, ignore_index=True)
-        result.to_csv(OUTPUT_DIR / 'OT_results.csv', index = False)
+        #result.to_csv(OUTPUT_DIR / 'OT_results.csv', index = False)
 
 
 
     # Part 2: Run various decision flags in the most recent season
-    dfs2 = []
-    flag_combos =  [[False, False], [False, True], [True, False], [True, True]]
+    dfs2 = 100#[]
+    flag_combos =  [[False, False], [True, False], [False, True]]
     n2 = DECISION_SIMS
     with Pool(cpu_count()) as pool:
         for flags in flag_combos:
             goforit_2pc = flags[0]
             goforit_fg = flags[1]
 
-            df = simulate_overtimes(CURRENT_SEASON, n2, goforit_2pc, goforit_fg, write_output=True, pool=pool)
+            df = simulate_overtimes(current_season, n2, goforit_2pc, goforit_fg, write_output=True, pool=pool)
             print(f'Ran {n2} simulations in the {season} season. '
                   f'{"Going for 2pc" if goforit_2pc else "Kicking extra points on matching TDs"}. '
                   f'{"Going for it on FG attempts" if goforit_fg else "Kicking tying field goals"}.')
@@ -95,5 +96,5 @@ if __name__ == '__main__':
             'TIE': '% Tie'
         })
 
-        result.to_csv(OUTPUT_DIR / f'OT_results_{CURRENT_SEASON}_decisions.csv', index = False)
+        result.to_csv(OUTPUT_DIR / f'OT_results_{current_season}_decisions.csv', index = False)
         print('Done')

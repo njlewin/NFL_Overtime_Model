@@ -19,7 +19,7 @@ conversion_rates = pd.read_csv(DATA_DIR / CONVERSION_FILE).T[0].to_dict()
 fourth_downs = pd.read_csv(DATA_DIR / FOURTH_DOWN_FILE)
 
 
-class Overtime_Period:
+class OvertimePeriod:
     """
     Simulates an NFL overtime period drive-by-drive using historical play data.
 
@@ -105,7 +105,6 @@ class Overtime_Period:
         self.switch_posteam()
         self.time_remaining-=ko_result.loc['time_elapsed']
         if ko_result.loc['return_touchdown'] == True:
-            self.had_possession[self.posteam] = True
             self.poscount[self.posteam]+=1
             self.posresults[self.posteam].append('RETURN TOUCHDOWN')
             self.summary += f'{self.teams[self.posteam]} returns it for a touchdown.\n'
@@ -129,6 +128,7 @@ class Overtime_Period:
         """Record a touchdown, attempt PAT, and kick off if the game continues."""
         self.score[self.posteam] += 6
         self.scored_TD[self.posteam] = True
+        self.had_possession[self.posteam] = True
         self.extra_point()
         if not game_over(self):
             self.kickoff(self.posteam)
@@ -174,7 +174,6 @@ class Overtime_Period:
             self.score_touchdown()
         elif attempt['def_td'] == 1:
             self.switch_posteam()
-            self.had_possession[self.posteam] = True
             self.poscount[self.posteam] += 1
             self.summary += (f'{self.teams[self.posteam]} went for it on fourth down, turned it over and '
                              f'{self.teams[int(not self.posteam)]} scored a touchdown.\n')
@@ -223,6 +222,7 @@ class Overtime_Period:
                 self.switch_posteam()
                 if drive['defteam_TD'] == True:
                     self.summary += f'{self.teams[self.posteam]} returns it for a touchdown.\n'
+                    self.poscount[self.posteam] += 1
                     self.score_touchdown()
                 else:
                     self.yardline = drive['next_drive_start_yardline']
@@ -253,8 +253,6 @@ class Overtime_Period:
             self.switch_posteam()
             if drive['defteam_TD'] == True:
                 self.summary += f'{self.teams[self.posteam]} returns it for a touchdown.\n'
-                self.switch_posteam()
-                self.had_possession[self.posteam] = True
                 self.poscount[self.posteam] += 1
                 self.score_touchdown()
             else:
