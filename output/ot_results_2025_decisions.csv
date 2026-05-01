@@ -1,4 +1,4 @@
-season,Go For It on Extra Points,Go For It on FG attempts,games,Receiving Team,Kicking Team,TIE,Receiving Team Advantage
-2025,FALSE,FALSE,100000,46.52%,39.88%,13.61%,6.64%
-2025,TRUE,FALSE,100000,47.30%,42.37%,10.32%,4.93%
-2025,FALSE,TRUE,100000,48.06%,40.38%,11.57%,7.67%
+season,Go For It on Extra Points,Go For It on FG attempts,games,% Receiving Team Won,% Kicking Team Won,% Tie,Receiving Team Advantage
+2025,False,False,100000,0.46649,0.39538,0.13813,0.07111
+2025,True,False,100000,0.47347,0.42271,0.10382,0.05076000000000003
+2025,False,True,100000,0.48209,0.40314,0.11477,0.07895000000000002

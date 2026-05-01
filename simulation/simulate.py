@@ -42,7 +42,7 @@ if __name__ == '__main__':
 
     seasons = [2011, 2013, 2016, 2021, 2024, current_season]
     #seasons = [current_season]
-    n1 = 100#SIM_NUM
+    n1 = SIM_NUM
     with Pool(cpu_count()) as pool:
         dfs1 = []
         for season in seasons:
@@ -59,12 +59,12 @@ if __name__ == '__main__':
 
 
         result = pd.concat(dfs1, ignore_index=True)
-        #result.to_csv(OUTPUT_DIR / 'OT_results.csv', index = False)
+        result.to_csv(OUTPUT_DIR / 'OT_results.csv', index = False)
 
 
 
     # Part 2: Run various decision flags in the most recent season
-    dfs2 = 100#[]
+    dfs2 = []
     flag_combos =  [[False, False], [True, False], [False, True]]
     n2 = DECISION_SIMS
     with Pool(cpu_count()) as pool:
