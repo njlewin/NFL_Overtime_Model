@@ -27,7 +27,7 @@ NFL_Overtime_Model/
 ├── analysis/
 │   ├── analysis.ipynb         # Supporting analysis and figure generation
 │   └── assets/                # Charts and data used in the write-up
-├── data/                      # Play-by-play and preprocessed drive data
+├── data/                      # Raw play-by-play data, data processing scripts, and processed data
 └── output/                    # Simulation result CSVs
 ```
 ### Data
