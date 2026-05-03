@@ -5,6 +5,7 @@ FTMBA Class of 2027, UC Berkeley Haas
 [linkedin.com/in/njlewin/](https://linkedin.com/in/njlewin/) | [github.com/njlewin/](https://github.com/njlewin/)
 
 ---
+Full write-up and results can be found here: https://njlewin.github.io/NFL_Overtime_Model/
 
 ## Summary
 In 2025 the NFL introduced new overtime rules, and the optimal strategy between kicking or receiving the opening kickoff is still unclear. Previously, the consensus opinion was that the receiving team was at an advantage; overtime was sudden-death (or a modified sudden-death) and the receiving team had the opportunity to end the game outright on their first offensive possession. The new rules guarantee both teams at least one possession, and the advantage is less clear. After one full season with the new rules, NFL coaches remain split on the decision, and, with only 17 games played under the rule, the sample size is too small to determine the correct outcome. In order to determine the optimal decision, thousands of overtimes were simulated under the new ruleset in order to determine the long-run average result between kicking and receiving.
