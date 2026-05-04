@@ -7848,7 +7848,7 @@ github.com/njlewin/</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Methodology">Methodology<a class="anchor-link" href="#Methodology">¶</a></h1><p>The model simulates NFL overtime periods using historical play-by-play data. The goal is to find a random historical analog to the game situation, apply that result to the modeled game state, and iterate until the game is complete by the given overtime rules. By repeating the random simulations enough (10,000 times), the results will approximate the long-run average.</p>
+<h1 id="Methodology">Methodology<a class="anchor-link" href="#Methodology">¶</a></h1><h3 id="Using-results-analogous-historical-situations-to-iteratively-simulate-overtimes,-repeating-to-reach-the-long-run-average.">Using results analogous historical situations to iteratively simulate overtimes, repeating to reach the long-run average.<a class="anchor-link" href="#Using-results-analogous-historical-situations-to-iteratively-simulate-overtimes,-repeating-to-reach-the-long-run-average.">¶</a></h3><p>The model simulates NFL overtime periods using historical play-by-play data. The goal is to find a random historical analog to the game situation, apply that result to the modeled game state, and iterate until the game is complete by the given overtime rules. By repeating the random simulations enough (10,000 times), the results will approximate the long-run average.</p>
 <p>Overtime play is broken into two components: kickoffs and drives. Kickoff results are modeled by sampling randomly from historical kickoffs in the relevant season, producing either a starting field position for the receiving team or a return touchdown. Only kickoffs from the season being modeled are used to account for the frequent rule changes affecting kickoff yard line, touchback location, and the addition of the dynamic kickoff format in 2024.</p>
 <p>Drives are modeled by matching the current game state to a historical drive with comparable game conditions. The game conditions considered are the starting yard line, time remaining in the game, and score differential, as these are the key variables that define an offense's approach and the likelihood of drive outcomes. Historical drives are scored by a weighted Euclidean distance across to these three variables, normalized. Yard line and time remaining are normalized by their standard deviation within the dataset, while score differential is normalized by 7, the practical maximum in overtime. Yard line and time remaining are weighted more heavily than score differential given the constrained range of score differentials in overtime.</p>
 <p>$$ Score = \sqrt{0.4 \cdot \left(\frac{\Delta\text{yardline}}{\sigma_{\text{yardline}}}\right)^2 + 0.4 \cdot \left(\frac{\Delta\text{time}}{\sigma_{\text{time}}}\right)^2 + 0.2 \cdot \left(\frac{\Delta\text{score differential}}{7}\right)^2}$$</p>
@@ -7871,7 +7871,7 @@ github.com/njlewin/</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Results">Results<a class="anchor-link" href="#Results">¶</a></h1><h2 id="Comparison-to-Historical">Comparison to Historical<a class="anchor-link" href="#Comparison-to-Historical">¶</a></h2>
+<h1 id="Results">Results<a class="anchor-link" href="#Results">¶</a></h1><h2 id="Comparison-to-Historical">Comparison to Historical<a class="anchor-link" href="#Comparison-to-Historical">¶</a></h2><h3 id="Modeled-results-match-historical-trends.">Modeled results match historical trends.<a class="anchor-link" href="#Modeled-results-match-historical-trends.">¶</a></h3>
 </div>
 </div>
 </div>
@@ -7884,58 +7884,58 @@ github.com/njlewin/</p>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style type="text/css">
 </style>
-<table id="T_c47d5">
+<table id="T_a91ce">
 <thead>
 <tr>
-<th class="col_heading level0 col0" id="T_c47d5_level0_col0">Ruleset</th>
-<th class="col_heading level0 col1" id="T_c47d5_level0_col1">Overtime Rules</th>
-<th class="col_heading level0 col2" id="T_c47d5_level0_col2">Overtime Length</th>
-<th class="col_heading level0 col3" id="T_c47d5_level0_col3">Kickoff Rules</th>
-<th class="col_heading level0 col4" id="T_c47d5_level0_col4">Avg. Receiving Team Start</th>
+<th class="col_heading level0 col0" id="T_a91ce_level0_col0">Ruleset</th>
+<th class="col_heading level0 col1" id="T_a91ce_level0_col1">Overtime Rules</th>
+<th class="col_heading level0 col2" id="T_a91ce_level0_col2">Overtime Length</th>
+<th class="col_heading level0 col3" id="T_a91ce_level0_col3">Kickoff Rules</th>
+<th class="col_heading level0 col4" id="T_a91ce_level0_col4">Avg. Receiving Team Start</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="data row0 col0" id="T_c47d5_row0_col0">Pre 2012</td>
-<td class="data row0 col1" id="T_c47d5_row0_col1">Pure Sudden Death</td>
-<td class="data row0 col2" id="T_c47d5_row0_col2">15 minutes</td>
-<td class="data row0 col3" id="T_c47d5_row0_col3">Kickoff at the 35 Yardline, Touchback at the 20 Yardline</td>
-<td class="data row0 col4" id="T_c47d5_row0_col4">28</td>
+<td class="data row0 col0" id="T_a91ce_row0_col0">Pre 2012</td>
+<td class="data row0 col1" id="T_a91ce_row0_col1">Pure Sudden Death</td>
+<td class="data row0 col2" id="T_a91ce_row0_col2">15 minutes</td>
+<td class="data row0 col3" id="T_a91ce_row0_col3">Kickoff at the 35 Yardline, Touchback at the 20 Yardline</td>
+<td class="data row0 col4" id="T_a91ce_row0_col4">28</td>
 </tr>
 <tr>
-<td class="data row1 col0" id="T_c47d5_row1_col0">2012-2015</td>
-<td class="data row1 col1" id="T_c47d5_row1_col1">Sudden Death, except for a first possession field goal</td>
-<td class="data row1 col2" id="T_c47d5_row1_col2">15 minutes</td>
-<td class="data row1 col3" id="T_c47d5_row1_col3">Kickoff at the 35 Yardline, Touchback at the 20 Yardline</td>
-<td class="data row1 col4" id="T_c47d5_row1_col4">23</td>
+<td class="data row1 col0" id="T_a91ce_row1_col0">2012-2015</td>
+<td class="data row1 col1" id="T_a91ce_row1_col1">Sudden Death, except for a first possession field goal</td>
+<td class="data row1 col2" id="T_a91ce_row1_col2">15 minutes</td>
+<td class="data row1 col3" id="T_a91ce_row1_col3">Kickoff at the 35 Yardline, Touchback at the 20 Yardline</td>
+<td class="data row1 col4" id="T_a91ce_row1_col4">23</td>
 </tr>
 <tr>
-<td class="data row2 col0" id="T_c47d5_row2_col0">2016</td>
-<td class="data row2 col1" id="T_c47d5_row2_col1">Sudden Death, except for a first possession field goal</td>
-<td class="data row2 col2" id="T_c47d5_row2_col2">15 minutes</td>
-<td class="data row2 col3" id="T_c47d5_row2_col3">Kickoff at the 35 Yardline, Touchback at the 25 Yardline</td>
-<td class="data row2 col4" id="T_c47d5_row2_col4">26</td>
+<td class="data row2 col0" id="T_a91ce_row2_col0">2016</td>
+<td class="data row2 col1" id="T_a91ce_row2_col1">Sudden Death, except for a first possession field goal</td>
+<td class="data row2 col2" id="T_a91ce_row2_col2">15 minutes</td>
+<td class="data row2 col3" id="T_a91ce_row2_col3">Kickoff at the 35 Yardline, Touchback at the 25 Yardline</td>
+<td class="data row2 col4" id="T_a91ce_row2_col4">26</td>
 </tr>
 <tr>
-<td class="data row3 col0" id="T_c47d5_row3_col0">2017-2023</td>
-<td class="data row3 col1" id="T_c47d5_row3_col1">Sudden Death, except for a first possession field goal</td>
-<td class="data row3 col2" id="T_c47d5_row3_col2">10 minutes</td>
-<td class="data row3 col3" id="T_c47d5_row3_col3">Kickoff at the 35 Yardline, Touchback at the 25 Yardline</td>
-<td class="data row3 col4" id="T_c47d5_row3_col4">26</td>
+<td class="data row3 col0" id="T_a91ce_row3_col0">2017-2023</td>
+<td class="data row3 col1" id="T_a91ce_row3_col1">Sudden Death, except for a first possession field goal</td>
+<td class="data row3 col2" id="T_a91ce_row3_col2">10 minutes</td>
+<td class="data row3 col3" id="T_a91ce_row3_col3">Kickoff at the 35 Yardline, Touchback at the 25 Yardline</td>
+<td class="data row3 col4" id="T_a91ce_row3_col4">26</td>
 </tr>
 <tr>
-<td class="data row4 col0" id="T_c47d5_row4_col0">2024</td>
-<td class="data row4 col1" id="T_c47d5_row4_col1">Sudden Death, except for a first possession field goal</td>
-<td class="data row4 col2" id="T_c47d5_row4_col2">10 minutes</td>
-<td class="data row4 col3" id="T_c47d5_row4_col3">Dynamic Kickoff Rules, Touchback at the 30 Yardline</td>
-<td class="data row4 col4" id="T_c47d5_row4_col4">30</td>
+<td class="data row4 col0" id="T_a91ce_row4_col0">2024</td>
+<td class="data row4 col1" id="T_a91ce_row4_col1">Sudden Death, except for a first possession field goal</td>
+<td class="data row4 col2" id="T_a91ce_row4_col2">10 minutes</td>
+<td class="data row4 col3" id="T_a91ce_row4_col3">Dynamic Kickoff Rules, Touchback at the 30 Yardline</td>
+<td class="data row4 col4" id="T_a91ce_row4_col4">30</td>
 </tr>
 <tr>
-<td class="data row5 col0" id="T_c47d5_row5_col0">2025</td>
-<td class="data row5 col1" id="T_c47d5_row5_col1">Both Teams Guaranteed one possession</td>
-<td class="data row5 col2" id="T_c47d5_row5_col2">10 minutes</td>
-<td class="data row5 col3" id="T_c47d5_row5_col3">Dynamic Kickoff Rules, Touchback at the 35 Yardline</td>
-<td class="data row5 col4" id="T_c47d5_row5_col4">31</td>
+<td class="data row5 col0" id="T_a91ce_row5_col0">2025</td>
+<td class="data row5 col1" id="T_a91ce_row5_col1">Both Teams Guaranteed one possession</td>
+<td class="data row5 col2" id="T_a91ce_row5_col2">10 minutes</td>
+<td class="data row5 col3" id="T_a91ce_row5_col3">Dynamic Kickoff Rules, Touchback at the 35 Yardline</td>
+<td class="data row5 col4" id="T_a91ce_row5_col4">31</td>
 </tr>
 </tbody>
 </table>
@@ -7962,124 +7962,124 @@ github.com/njlewin/</p>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <style type="text/css">
-#T_49792 th.col_heading.level0 {
+#T_99849 th.col_heading.level0 {
   text-align: center;
 }
-#T_49792_level0_col1 {
+#T_99849_level0_col1 {
   background-color: #1f77b4;
   color: white;
 }
-#T_49792_level0_col6 {
+#T_99849_level0_col6 {
   background-color: #ff7f0e;
   color: white;
 }
 </style>
-<table id="T_49792">
+<table id="T_99849">
 <thead>
 <tr>
-<th class="col_heading level0 col0" id="T_49792_level0_col0"></th>
-<th class="col_heading level0 col1" colspan="5" id="T_49792_level0_col1">Historical</th>
-<th class="col_heading level0 col6" colspan="6" id="T_49792_level0_col6">Modeled</th>
+<th class="col_heading level0 col0" id="T_99849_level0_col0"></th>
+<th class="col_heading level0 col1" colspan="5" id="T_99849_level0_col1">Historical</th>
+<th class="col_heading level0 col6" colspan="6" id="T_99849_level0_col6">Modeled</th>
 </tr>
 <tr>
-<th class="col_heading level1 col0" id="T_49792_level1_col0">Ruleset</th>
-<th class="col_heading level1 col1" id="T_49792_level1_col1">Games</th>
-<th class="col_heading level1 col2" id="T_49792_level1_col2">% Receiving Team Won</th>
-<th class="col_heading level1 col3" id="T_49792_level1_col3">% Kicking Team Won</th>
-<th class="col_heading level1 col4" id="T_49792_level1_col4">% Tie</th>
-<th class="col_heading level1 col5" id="T_49792_level1_col5">Receiving Team Advantage</th>
-<th class="col_heading level1 col6" id="T_49792_level1_col6">Season</th>
-<th class="col_heading level1 col7" id="T_49792_level1_col7">Games</th>
-<th class="col_heading level1 col8" id="T_49792_level1_col8">% Receiving Team Won</th>
-<th class="col_heading level1 col9" id="T_49792_level1_col9">% Kicking Team Won</th>
-<th class="col_heading level1 col10" id="T_49792_level1_col10">% Tie</th>
-<th class="col_heading level1 col11" id="T_49792_level1_col11">Receiving Team Advantage</th>
+<th class="col_heading level1 col0" id="T_99849_level1_col0">Ruleset</th>
+<th class="col_heading level1 col1" id="T_99849_level1_col1">Games</th>
+<th class="col_heading level1 col2" id="T_99849_level1_col2">% Receiving Team Won</th>
+<th class="col_heading level1 col3" id="T_99849_level1_col3">% Kicking Team Won</th>
+<th class="col_heading level1 col4" id="T_99849_level1_col4">% Tie</th>
+<th class="col_heading level1 col5" id="T_99849_level1_col5">Receiving Team Advantage</th>
+<th class="col_heading level1 col6" id="T_99849_level1_col6">Season</th>
+<th class="col_heading level1 col7" id="T_99849_level1_col7">Games</th>
+<th class="col_heading level1 col8" id="T_99849_level1_col8">% Receiving Team Won</th>
+<th class="col_heading level1 col9" id="T_99849_level1_col9">% Kicking Team Won</th>
+<th class="col_heading level1 col10" id="T_99849_level1_col10">% Tie</th>
+<th class="col_heading level1 col11" id="T_99849_level1_col11">Receiving Team Advantage</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="data row0 col0" id="T_49792_row0_col0">Pre 2012</td>
-<td class="data row0 col1" id="T_49792_row0_col1">191</td>
-<td class="data row0 col2" id="T_49792_row0_col2">55.5%</td>
-<td class="data row0 col3" id="T_49792_row0_col3">43.5%</td>
-<td class="data row0 col4" id="T_49792_row0_col4">1.0%</td>
-<td class="data row0 col5" id="T_49792_row0_col5">12.0%</td>
-<td class="data row0 col6" id="T_49792_row0_col6">2011</td>
-<td class="data row0 col7" id="T_49792_row0_col7">10000</td>
-<td class="data row0 col8" id="T_49792_row0_col8">52.6%</td>
-<td class="data row0 col9" id="T_49792_row0_col9">42.8%</td>
-<td class="data row0 col10" id="T_49792_row0_col10">4.5%</td>
-<td class="data row0 col11" id="T_49792_row0_col11">9.8%</td>
+<td class="data row0 col0" id="T_99849_row0_col0">Pre 2012</td>
+<td class="data row0 col1" id="T_99849_row0_col1">191</td>
+<td class="data row0 col2" id="T_99849_row0_col2">55.5%</td>
+<td class="data row0 col3" id="T_99849_row0_col3">43.5%</td>
+<td class="data row0 col4" id="T_99849_row0_col4">1.0%</td>
+<td class="data row0 col5" id="T_99849_row0_col5">12.0%</td>
+<td class="data row0 col6" id="T_99849_row0_col6">2011</td>
+<td class="data row0 col7" id="T_99849_row0_col7">10000</td>
+<td class="data row0 col8" id="T_99849_row0_col8">52.6%</td>
+<td class="data row0 col9" id="T_99849_row0_col9">42.8%</td>
+<td class="data row0 col10" id="T_99849_row0_col10">4.5%</td>
+<td class="data row0 col11" id="T_99849_row0_col11">9.8%</td>
 </tr>
 <tr>
-<td class="data row1 col0" id="T_49792_row1_col0">2012-2015</td>
-<td class="data row1 col1" id="T_49792_row1_col1">73</td>
-<td class="data row1 col2" id="T_49792_row1_col2">50.7%</td>
-<td class="data row1 col3" id="T_49792_row1_col3">43.8%</td>
-<td class="data row1 col4" id="T_49792_row1_col4">5.5%</td>
-<td class="data row1 col5" id="T_49792_row1_col5">6.8%</td>
-<td class="data row1 col6" id="T_49792_row1_col6">2013</td>
-<td class="data row1 col7" id="T_49792_row1_col7">10000</td>
-<td class="data row1 col8" id="T_49792_row1_col8">47.8%</td>
-<td class="data row1 col9" id="T_49792_row1_col9">46.4%</td>
-<td class="data row1 col10" id="T_49792_row1_col10">5.8%</td>
-<td class="data row1 col11" id="T_49792_row1_col11">1.3%</td>
+<td class="data row1 col0" id="T_99849_row1_col0">2012-2015</td>
+<td class="data row1 col1" id="T_99849_row1_col1">73</td>
+<td class="data row1 col2" id="T_99849_row1_col2">50.7%</td>
+<td class="data row1 col3" id="T_99849_row1_col3">43.8%</td>
+<td class="data row1 col4" id="T_99849_row1_col4">5.5%</td>
+<td class="data row1 col5" id="T_99849_row1_col5">6.8%</td>
+<td class="data row1 col6" id="T_99849_row1_col6">2013</td>
+<td class="data row1 col7" id="T_99849_row1_col7">10000</td>
+<td class="data row1 col8" id="T_99849_row1_col8">47.8%</td>
+<td class="data row1 col9" id="T_99849_row1_col9">46.4%</td>
+<td class="data row1 col10" id="T_99849_row1_col10">5.8%</td>
+<td class="data row1 col11" id="T_99849_row1_col11">1.3%</td>
 </tr>
 <tr>
-<td class="data row2 col0" id="T_49792_row2_col0">2016</td>
-<td class="data row2 col1" id="T_49792_row2_col1">14</td>
-<td class="data row2 col2" id="T_49792_row2_col2">42.9%</td>
-<td class="data row2 col3" id="T_49792_row2_col3">42.9%</td>
-<td class="data row2 col4" id="T_49792_row2_col4">14.3%</td>
-<td class="data row2 col5" id="T_49792_row2_col5">0.0%</td>
-<td class="data row2 col6" id="T_49792_row2_col6">2016</td>
-<td class="data row2 col7" id="T_49792_row2_col7">10000</td>
-<td class="data row2 col8" id="T_49792_row2_col8">48.0%</td>
-<td class="data row2 col9" id="T_49792_row2_col9">46.4%</td>
-<td class="data row2 col10" id="T_49792_row2_col10">5.7%</td>
-<td class="data row2 col11" id="T_49792_row2_col11">1.6%</td>
+<td class="data row2 col0" id="T_99849_row2_col0">2016</td>
+<td class="data row2 col1" id="T_99849_row2_col1">14</td>
+<td class="data row2 col2" id="T_99849_row2_col2">42.9%</td>
+<td class="data row2 col3" id="T_99849_row2_col3">42.9%</td>
+<td class="data row2 col4" id="T_99849_row2_col4">14.3%</td>
+<td class="data row2 col5" id="T_99849_row2_col5">0.0%</td>
+<td class="data row2 col6" id="T_99849_row2_col6">2016</td>
+<td class="data row2 col7" id="T_99849_row2_col7">10000</td>
+<td class="data row2 col8" id="T_99849_row2_col8">48.0%</td>
+<td class="data row2 col9" id="T_99849_row2_col9">46.4%</td>
+<td class="data row2 col10" id="T_99849_row2_col10">5.7%</td>
+<td class="data row2 col11" id="T_99849_row2_col11">1.6%</td>
 </tr>
 <tr>
-<td class="data row3 col0" id="T_49792_row3_col0">2017-2023</td>
-<td class="data row3 col1" id="T_49792_row3_col1">108</td>
-<td class="data row3 col2" id="T_49792_row3_col2">53.7%</td>
-<td class="data row3 col3" id="T_49792_row3_col3">38.9%</td>
-<td class="data row3 col4" id="T_49792_row3_col4">7.4%</td>
-<td class="data row3 col5" id="T_49792_row3_col5">14.8%</td>
-<td class="data row3 col6" id="T_49792_row3_col6">2021</td>
-<td class="data row3 col7" id="T_49792_row3_col7">10000</td>
-<td class="data row3 col8" id="T_49792_row3_col8">47.9%</td>
-<td class="data row3 col9" id="T_49792_row3_col9">38.4%</td>
-<td class="data row3 col10" id="T_49792_row3_col10">13.7%</td>
-<td class="data row3 col11" id="T_49792_row3_col11">9.5%</td>
+<td class="data row3 col0" id="T_99849_row3_col0">2017-2023</td>
+<td class="data row3 col1" id="T_99849_row3_col1">108</td>
+<td class="data row3 col2" id="T_99849_row3_col2">53.7%</td>
+<td class="data row3 col3" id="T_99849_row3_col3">38.9%</td>
+<td class="data row3 col4" id="T_99849_row3_col4">7.4%</td>
+<td class="data row3 col5" id="T_99849_row3_col5">14.8%</td>
+<td class="data row3 col6" id="T_99849_row3_col6">2021</td>
+<td class="data row3 col7" id="T_99849_row3_col7">10000</td>
+<td class="data row3 col8" id="T_99849_row3_col8">47.9%</td>
+<td class="data row3 col9" id="T_99849_row3_col9">38.4%</td>
+<td class="data row3 col10" id="T_99849_row3_col10">13.7%</td>
+<td class="data row3 col11" id="T_99849_row3_col11">9.5%</td>
 </tr>
 <tr>
-<td class="data row4 col0" id="T_49792_row4_col0">2024</td>
-<td class="data row4 col1" id="T_49792_row4_col1">16</td>
-<td class="data row4 col2" id="T_49792_row4_col2">75.0%</td>
-<td class="data row4 col3" id="T_49792_row4_col3">18.8%</td>
-<td class="data row4 col4" id="T_49792_row4_col4">6.2%</td>
-<td class="data row4 col5" id="T_49792_row4_col5">56.2%</td>
-<td class="data row4 col6" id="T_49792_row4_col6">2024</td>
-<td class="data row4 col7" id="T_49792_row4_col7">10000</td>
-<td class="data row4 col8" id="T_49792_row4_col8">52.7%</td>
-<td class="data row4 col9" id="T_49792_row4_col9">37.2%</td>
-<td class="data row4 col10" id="T_49792_row4_col10">10.1%</td>
-<td class="data row4 col11" id="T_49792_row4_col11">15.5%</td>
+<td class="data row4 col0" id="T_99849_row4_col0">2024</td>
+<td class="data row4 col1" id="T_99849_row4_col1">16</td>
+<td class="data row4 col2" id="T_99849_row4_col2">75.0%</td>
+<td class="data row4 col3" id="T_99849_row4_col3">18.8%</td>
+<td class="data row4 col4" id="T_99849_row4_col4">6.2%</td>
+<td class="data row4 col5" id="T_99849_row4_col5">56.2%</td>
+<td class="data row4 col6" id="T_99849_row4_col6">2024</td>
+<td class="data row4 col7" id="T_99849_row4_col7">10000</td>
+<td class="data row4 col8" id="T_99849_row4_col8">52.7%</td>
+<td class="data row4 col9" id="T_99849_row4_col9">37.2%</td>
+<td class="data row4 col10" id="T_99849_row4_col10">10.1%</td>
+<td class="data row4 col11" id="T_99849_row4_col11">15.5%</td>
 </tr>
 <tr>
-<td class="data row5 col0" id="T_49792_row5_col0">2025</td>
-<td class="data row5 col1" id="T_49792_row5_col1">17</td>
-<td class="data row5 col2" id="T_49792_row5_col2">52.9%</td>
-<td class="data row5 col3" id="T_49792_row5_col3">41.2%</td>
-<td class="data row5 col4" id="T_49792_row5_col4">5.9%</td>
-<td class="data row5 col5" id="T_49792_row5_col5">11.8%</td>
-<td class="data row5 col6" id="T_49792_row5_col6">2025</td>
-<td class="data row5 col7" id="T_49792_row5_col7">10000</td>
-<td class="data row5 col8" id="T_49792_row5_col8">46.9%</td>
-<td class="data row5 col9" id="T_49792_row5_col9">39.4%</td>
-<td class="data row5 col10" id="T_49792_row5_col10">13.7%</td>
-<td class="data row5 col11" id="T_49792_row5_col11">7.5%</td>
+<td class="data row5 col0" id="T_99849_row5_col0">2025</td>
+<td class="data row5 col1" id="T_99849_row5_col1">17</td>
+<td class="data row5 col2" id="T_99849_row5_col2">52.9%</td>
+<td class="data row5 col3" id="T_99849_row5_col3">41.2%</td>
+<td class="data row5 col4" id="T_99849_row5_col4">5.9%</td>
+<td class="data row5 col5" id="T_99849_row5_col5">11.8%</td>
+<td class="data row5 col6" id="T_99849_row5_col6">2025</td>
+<td class="data row5 col7" id="T_99849_row5_col7">10000</td>
+<td class="data row5 col8" id="T_99849_row5_col8">46.9%</td>
+<td class="data row5 col9" id="T_99849_row5_col9">39.4%</td>
+<td class="data row5 col10" id="T_99849_row5_col10">13.7%</td>
+<td class="data row5 col11" id="T_99849_row5_col11">7.5%</td>
 </tr>
 </tbody>
 </table>
@@ -8169,49 +8169,49 @@ github.com/njlewin/</p>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
 <style type="text/css">
 </style>
-<table id="T_79baa">
+<table id="T_949c6">
 <thead>
 <tr>
-<th class="col_heading level0 col0" id="T_79baa_level0_col0">Season</th>
-<th class="col_heading level0 col1" id="T_79baa_level0_col1">2 Point Conversions Down by 1</th>
-<th class="col_heading level0 col2" id="T_79baa_level0_col2">Fourth Down Attempts when down by 3</th>
-<th class="col_heading level0 col3" id="T_79baa_level0_col3">Games</th>
-<th class="col_heading level0 col4" id="T_79baa_level0_col4">% Receiving Team Won</th>
-<th class="col_heading level0 col5" id="T_79baa_level0_col5">% Kicking Team Won</th>
-<th class="col_heading level0 col6" id="T_79baa_level0_col6">% Tie</th>
-<th class="col_heading level0 col7" id="T_79baa_level0_col7">Receiving Team Advantage</th>
+<th class="col_heading level0 col0" id="T_949c6_level0_col0">Season</th>
+<th class="col_heading level0 col1" id="T_949c6_level0_col1">2 Point Conversions Down by 1</th>
+<th class="col_heading level0 col2" id="T_949c6_level0_col2">Fourth Down Attempts when down by 3</th>
+<th class="col_heading level0 col3" id="T_949c6_level0_col3">Games</th>
+<th class="col_heading level0 col4" id="T_949c6_level0_col4">% Receiving Team Won</th>
+<th class="col_heading level0 col5" id="T_949c6_level0_col5">% Kicking Team Won</th>
+<th class="col_heading level0 col6" id="T_949c6_level0_col6">% Tie</th>
+<th class="col_heading level0 col7" id="T_949c6_level0_col7">Receiving Team Advantage</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="data row0 col0" id="T_79baa_row0_col0">2025</td>
-<td class="data row0 col1" id="T_79baa_row0_col1">False</td>
-<td class="data row0 col2" id="T_79baa_row0_col2">False</td>
-<td class="data row0 col3" id="T_79baa_row0_col3">100000</td>
-<td class="data row0 col4" id="T_79baa_row0_col4">46.6%</td>
-<td class="data row0 col5" id="T_79baa_row0_col5">39.5%</td>
-<td class="data row0 col6" id="T_79baa_row0_col6">13.8%</td>
-<td class="data row0 col7" id="T_79baa_row0_col7">7.1%</td>
+<td class="data row0 col0" id="T_949c6_row0_col0">2025</td>
+<td class="data row0 col1" id="T_949c6_row0_col1">False</td>
+<td class="data row0 col2" id="T_949c6_row0_col2">False</td>
+<td class="data row0 col3" id="T_949c6_row0_col3">100000</td>
+<td class="data row0 col4" id="T_949c6_row0_col4">46.6%</td>
+<td class="data row0 col5" id="T_949c6_row0_col5">39.5%</td>
+<td class="data row0 col6" id="T_949c6_row0_col6">13.8%</td>
+<td class="data row0 col7" id="T_949c6_row0_col7">7.1%</td>
 </tr>
 <tr>
-<td class="data row1 col0" id="T_79baa_row1_col0">2025</td>
-<td class="data row1 col1" id="T_79baa_row1_col1">True</td>
-<td class="data row1 col2" id="T_79baa_row1_col2">False</td>
-<td class="data row1 col3" id="T_79baa_row1_col3">100000</td>
-<td class="data row1 col4" id="T_79baa_row1_col4">47.3%</td>
-<td class="data row1 col5" id="T_79baa_row1_col5">42.3%</td>
-<td class="data row1 col6" id="T_79baa_row1_col6">10.4%</td>
-<td class="data row1 col7" id="T_79baa_row1_col7">5.1%</td>
+<td class="data row1 col0" id="T_949c6_row1_col0">2025</td>
+<td class="data row1 col1" id="T_949c6_row1_col1">True</td>
+<td class="data row1 col2" id="T_949c6_row1_col2">False</td>
+<td class="data row1 col3" id="T_949c6_row1_col3">100000</td>
+<td class="data row1 col4" id="T_949c6_row1_col4">47.3%</td>
+<td class="data row1 col5" id="T_949c6_row1_col5">42.3%</td>
+<td class="data row1 col6" id="T_949c6_row1_col6">10.4%</td>
+<td class="data row1 col7" id="T_949c6_row1_col7">5.1%</td>
 </tr>
 <tr>
-<td class="data row2 col0" id="T_79baa_row2_col0">2025</td>
-<td class="data row2 col1" id="T_79baa_row2_col1">False</td>
-<td class="data row2 col2" id="T_79baa_row2_col2">True</td>
-<td class="data row2 col3" id="T_79baa_row2_col3">100000</td>
-<td class="data row2 col4" id="T_79baa_row2_col4">48.2%</td>
-<td class="data row2 col5" id="T_79baa_row2_col5">40.3%</td>
-<td class="data row2 col6" id="T_79baa_row2_col6">11.5%</td>
-<td class="data row2 col7" id="T_79baa_row2_col7">7.9%</td>
+<td class="data row2 col0" id="T_949c6_row2_col0">2025</td>
+<td class="data row2 col1" id="T_949c6_row2_col1">False</td>
+<td class="data row2 col2" id="T_949c6_row2_col2">True</td>
+<td class="data row2 col3" id="T_949c6_row2_col3">100000</td>
+<td class="data row2 col4" id="T_949c6_row2_col4">48.2%</td>
+<td class="data row2 col5" id="T_949c6_row2_col5">40.3%</td>
+<td class="data row2 col6" id="T_949c6_row2_col6">11.5%</td>
+<td class="data row2 col7" id="T_949c6_row2_col7">7.9%</td>
 </tr>
 </tbody>
 </table>
@@ -8250,7 +8250,7 @@ github.com/njlewin/</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>There is likely a cutoff point of field position and yards to go in which the probability of converting on fourth down and subsequently scoring a touchdown results in a higher expected value than a game tying field goal. In the most extreme example, when facing fourth-and-one on the one-yard line, going for it almost certainly has a higher expected value than kicking a field goal from this point. But the decision is complicated as you increase the yard-to-go for the first down and get farther from the goal-line. Finding the cutoff points where the expected value tips in favor of a fourth down attempt is a further point of recommended study.</p>
+<p>There is likely a cutoff point of field position and yards-to-go in which the probability of converting on fourth down and subsequently scoring a touchdown results in a higher expected value than a game tying field goal. In the most extreme example, when facing fourth-and-one on the one-yard line, going for it almost certainly has a higher expected value than kicking a field goal from this point. But the decision is complicated as you increase the distance needed for a first down and get farther from the goal-line. Finding the cutoff points where the expected value tips in favor of a fourth down attempt is a further point of recommended study.</p>
 </div>
 </div>
 </div>
