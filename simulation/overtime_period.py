@@ -17,6 +17,7 @@ drive_list = pd.read_csv(DATA_DIR / DRIVE_FILE)
 ko_list = pd.read_csv(DATA_DIR / KO_FILE)
 conversion_rates = pd.read_csv(DATA_DIR / CONVERSION_FILE).T[0].to_dict()
 fourth_downs = pd.read_csv(DATA_DIR / FOURTH_DOWN_FILE)
+hfas = pd.read_csv(DATA_DIR/HFA_FILE, index_col = 0)
 
 
 class OvertimePeriod:
@@ -57,6 +58,7 @@ class OvertimePeriod:
         self.safety_scored = False
         self.goforit_2pc = goforit_2pc
         self.goforit_fg = goforit_fg
+        self.hfa = hfas.loc[season].iloc[0]
 
     def set_posteam(self, team_index: int):
         self.posteam = team_index
@@ -201,9 +203,9 @@ class OvertimePeriod:
         self.drive_count[self.posteam] += 1
         score_diff = self.score[self.posteam] - self.score[int(not self.posteam)]
 
-        earliest_year = max(drive_list['season'].min(), self.season - 10)
+        earliest_year = max(drive_list['season'].min(), self.season - DRIVE_LOOKBACK)
         drive, candidates = select_drive(drive_list[drive_list['season'].isin(range(earliest_year, self.season+1))],
-                                         self.yardline, self.time_remaining, score_diff, self.season)
+                                         self.yardline, self.time_remaining, score_diff)
         # if (drive['drive_result'] in ['END_GAME', 'END_HALF']
         #         and not (self.had_possession[0] and self.had_possession[1])):
         #     drive = candidates[~candidates['drive_result'].isin(['END_GAME', 'END_HALF'])].sample(1).iloc[0]

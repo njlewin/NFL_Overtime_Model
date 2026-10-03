@@ -89,5 +89,5 @@ team_changes = {'STL': 'LA', 'OAK':'LV', 'SD': 'LAC'}
 
 srs = srs.replace(team_changes)
 
-srs.to_csv('srs.csv', index = False)
-hfas.to_csv('hfas.csv', index = False)
+srs.to_csv(SRS_FILE, index = False)
+hfas.to_csv(HFA_FILE, index = False)

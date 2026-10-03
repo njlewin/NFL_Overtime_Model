@@ -6,9 +6,7 @@ import duckdb
 SIM_NUM = 10000
 # Simulation Count when deciding on "Go For It" Flags, needed because those decisions are relatively rare
 DECISION_SIMS = 100000
-MIN_YEAR = 2001
-CURRENT_YEAR = 2026
-years = range(MIN_YEAR, CURRENT_YEAR + 1)
+
 
 # Directories to use
 ROOT_DIR = Path(__file__).parent  # resolves to the directory config.py lives in
@@ -24,9 +22,13 @@ KO_FILE = "ko_list.csv"
 FOURTH_DOWN_FILE = "fourth_down_attempts.csv"
 CONVERSION_FILE = "conversion_rates.csv"
 PBP_FILE = "pbp_data.parquet"
+HFA_FILE = "hfas.csv"
+SRS_FILE = "srs.csv"
 
 current_season = duckdb.sql(f"""SELECT MAX(season) FROM read_parquet('{DATA_DIR/PBP_FILE}')""").fetchone()[0]
-
+MIN_YEAR = 2001
+years = range(MIN_YEAR, current_season + 1)
+DRIVE_LOOKBACK = 5
 
 # File Names (asset dir)
 HIST_COMPARISON = 'hist_comparison.csv'

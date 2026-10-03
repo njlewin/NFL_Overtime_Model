@@ -4,7 +4,8 @@ import numpy as np
 from simulation.rules import overtime_length
 
 
-def select_drive(drive_list: pd.DataFrame, yardline: float, time_remaining: float, score_diff: float, season) :
+def select_drive(drive_list: pd.DataFrame, yardline: float, time_remaining: float, score_diff: float,
+                 matchup = 0) :
     """
     Given a list of historical drives and a game situation, returns a
     randomly sampled drive from the top 5% most similar historical drives.
@@ -19,9 +20,10 @@ def select_drive(drive_list: pd.DataFrame, yardline: float, time_remaining: floa
     MAX_SCORE_DIFF = 7.0
 
     # --- Weights ---
-    W_YARDLINE = 0.4
-    W_TIME = 0.4
-    W_SCORE = 0.2
+    W_YARDLINE = 0.25
+    W_TIME = 0.25
+    W_SCORE = 0.25
+    W_MATCHUP = 0.25
 
     RETURN_COUNT = 50
 
@@ -29,12 +31,14 @@ def select_drive(drive_list: pd.DataFrame, yardline: float, time_remaining: floa
     d_yardline = (drive_list["start_yardline"] - yardline) / drive_list["start_yardline"].std()
     d_time = (drive_list["start_time_left"] - time_remaining) / drive_list["start_time_left"].std()
     d_score = (drive_list["start_score_diff"] - score_diff) / MAX_SCORE_DIFF
+    d_matchup = (drive_list['matchup'] - matchup) /drive_list['matchup'].std()
 
     # --- Weighted Euclidean distance ---
     distances = np.sqrt(
         W_YARDLINE * d_yardline ** 2 +
         W_TIME * d_time ** 2 +
-        W_SCORE * d_score ** 2
+        W_SCORE * d_score ** 2 +
+        W_MATCHUP * d_matchup ** 2
     )
 
     # --- Select top closest drives and sample ---

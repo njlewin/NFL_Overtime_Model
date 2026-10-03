@@ -67,8 +67,8 @@ def aggregate_drives(pbp_df):
     drives.loc[mask, 'next_drive_start_yardline'] = drives.loc[mask, 'last_yardline_100']
 
     # Add rankings (srs) and homefield advantage info to each drive
-    srs = pd.read_csv(DATA_DIR / 'srs.csv')
-    hfa = pd.read_csv(DATA_DIR / 'hfas.csv')
+    srs = pd.read_csv(DATA_DIR / SRS_FILE)
+    hfa = pd.read_csv(DATA_DIR / HFA_FILE)
 
     # Merge offense rankings
     drives = drives.merge(srs[['season', 'team','osrs']], left_on = ['season', 'posteam'],
@@ -79,7 +79,7 @@ def aggregate_drives(pbp_df):
     # Merge homefield advantage info
     drives = drives.merge(hfa, left_on = 'season', right_on = 'season', how = 'left')
 
-    # HFA is added when the hometeam is in possession, subtracted when they are not
+    # HFA is added when the home team is in possession, subtracted when they are not
     drives['apply_hfa'] = np.where(drives['posteam'] == drives['home_team'], 1, -1)
     # Matchup is OSRS - DSRS +/-HFA/2
     drives['matchup'] = drives['osrs'] - drives['dsrs']+drives['apply_hfa']*drives['hfa']/2
