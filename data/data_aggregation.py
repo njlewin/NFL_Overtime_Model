@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 import nfl_data_py as nfl
 import os
 from config import *
@@ -18,11 +19,12 @@ def aggregate_drives(pbp_df):
     .transform(lambda x: (x == 'extra_point').all())]
 
     cols_needed = [
+        'posteam', 'defteam', 'home_team',
         'game_id', 'drive', 'play_id', 'play_type',
         'yardline_100', 'game_seconds_remaining', 'play_duration',
         'posteam_score', 'defteam_score',
         'posteam_score_post', 'defteam_score_post',
-        'drive_end_transition', 'ydstogo'
+        'drive_end_transition', 'ydstogo',
     ]
     df = df[cols_needed]
 
@@ -38,6 +40,9 @@ def aggregate_drives(pbp_df):
 
     # Build the drive-level columns
     drives['drive_id']              = drives['game_id'] + '_' + drives['drive'].astype(int).astype(str)
+    drives['posteam']               = drives['first_posteam']
+    drives['defteam']               = drives['first_defteam']
+    drives['home_team']             = drives['first_home_team']
     drives['season']                = drives['drive_id'].str[:4].astype(int)
     drives['start_yardline']        = drives['first_yardline_100'].astype(int)
     drives['start_time_left']       = drives['first_game_seconds_remaining']
@@ -61,12 +66,30 @@ def aggregate_drives(pbp_df):
     mask = drives['next_drive_start_yardline'].isna()
     drives.loc[mask, 'next_drive_start_yardline'] = drives.loc[mask, 'last_yardline_100']
 
-    # Keep only the output columns
+    # Add rankings (srs) and homefield advantage info to each drive
+    srs = pd.read_csv(DATA_DIR / 'srs.csv')
+    hfa = pd.read_csv(DATA_DIR / 'hfas.csv')
+
+    # Merge offense rankings
+    drives = drives.merge(srs[['season', 'team','osrs']], left_on = ['season', 'posteam'],
+                          right_on = ['season', 'team'], how = 'left')
+    # Merge defense rankings
+    drives = drives.merge(srs[['season', 'team', 'dsrs']],  left_on = ['season', 'defteam'],
+                          right_on = ['season', 'team'], how = 'left')
+    # Merge homefield advantage info
+    drives = drives.merge(hfa, left_on = 'season', right_on = 'season', how = 'left')
+
+    # HFA is added when the hometeam is in possession, subtracted when they are not
+    drives['apply_hfa'] = np.where(drives['posteam'] == drives['home_team'], 1, -1)
+    # Matchup is OSRS - DSRS +/-HFA/2
+    drives['matchup'] = drives['osrs'] - drives['dsrs']+drives['apply_hfa']*drives['hfa']/2
+
+    # Keep only the output columnst
     output_cols = [
-        'drive_id', 'season', 'start_yardline', 'start_time_left',
+        'drive_id', 'season', 'posteam', 'defteam', 'home_team', 'start_yardline', 'start_time_left',
         'start_posteam_score', 'start_defteam_score', 'start_score_diff', 'drive_result',
         'time_elapsed', 'defteam_TD','posteam_score_change', 'defteam_score_change', 'last_play_yardline',
-        'last_ydstogo', 'next_drive_start_yardline'
+        'last_ydstogo', 'next_drive_start_yardline', 'osrs', 'dsrs', 'apply_hfa', 'hfa', 'matchup'
     ]
     drives[output_cols].to_csv(DRIVE_FILE, index=False)
     print('Drives aggregated')
@@ -97,7 +120,7 @@ def aggregate_kos(pbp_df):
     return kickoff_results
 
 # Aggregates extra point and conversion attempts
-# Produces a dataframe withe the extra point and two point conversion success rates.
+# Produces a dataframe with the the extra point and two point conversion success rates.
 def aggregate_conversions(pbp_df):
     eps = pbp_df['extra_point_result'].value_counts()
     tpcs = pbp_df['two_point_conv_result'].value_counts()

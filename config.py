@@ -6,7 +6,9 @@ import duckdb
 SIM_NUM = 10000
 # Simulation Count when deciding on "Go For It" Flags, needed because those decisions are relatively rare
 DECISION_SIMS = 100000
-
+MIN_YEAR = 2001
+CURRENT_YEAR = 2026
+years = range(MIN_YEAR, CURRENT_YEAR + 1)
 
 # Directories to use
 ROOT_DIR = Path(__file__).parent  # resolves to the directory config.py lives in
