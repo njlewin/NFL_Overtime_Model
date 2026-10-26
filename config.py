@@ -28,7 +28,7 @@ SRS_FILE = "srs.csv"
 current_season = duckdb.sql(f"""SELECT MAX(season) FROM read_parquet('{DATA_DIR/PBP_FILE}')""").fetchone()[0]
 MIN_YEAR = 2001
 years = range(MIN_YEAR, current_season + 1)
-DRIVE_LOOKBACK = 5
+DRIVE_LOOKBACK = 10
 
 # File Names (asset dir)
 HIST_COMPARISON = 'hist_comparison.csv'

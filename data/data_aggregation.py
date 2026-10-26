@@ -55,6 +55,7 @@ def aggregate_drives(pbp_df):
     drives['defteam_score_change']  = drives['last_defteam_score_post']  - drives['first_defteam_score']
     drives['last_play_yardline']    = drives['last_yardline_100']
     drives['last_play_ydstogo']   = drives['last_ydstogo']
+    drives['is_ot'] = drives['first_qtr']>4
     # get the yard line from the next drive to record what the next starting yardline is
     drives = drives.sort_values(['game_id', 'drive'])
     drives['time_elapsed'] = (drives['first_game_seconds_remaining'] - drives['last_game_seconds_remaining']+
@@ -89,7 +90,7 @@ def aggregate_drives(pbp_df):
         'drive_id', 'season', 'posteam', 'defteam', 'home_team', 'start_yardline', 'start_time_left',
         'start_posteam_score', 'start_defteam_score', 'start_score_diff', 'drive_result',
         'time_elapsed', 'defteam_TD','posteam_score_change', 'defteam_score_change', 'last_play_yardline',
-        'last_ydstogo', 'next_drive_start_yardline', 'osrs', 'dsrs', 'apply_hfa', 'hfa', 'matchup'
+        'last_ydstogo', 'next_drive_start_yardline', 'osrs', 'dsrs', 'apply_hfa', 'hfa', 'matchup', 'is_ot'
     ]
     drives[output_cols].to_csv(DRIVE_FILE, index=False)
     print('Drives aggregated')

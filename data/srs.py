@@ -63,7 +63,7 @@ def od_srs_rankings(df, season):
 
     return result_df, hfa
 
-df = nfl.load_schedules(years).to_pandas()
+df = nfl.load_schedules(list(range(MIN_YEAR, 2026+ 1))).to_pandas()
 df = df.dropna(subset=['home_score', 'away_score'])
 cols = ['season','home_team','away_team','home_score', 'away_score', 'game_type', 'result', 'location']
 df = df[cols]

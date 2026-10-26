@@ -6,14 +6,13 @@ Part of the NFL Overtime Monte Carlo simulation project.
 import pandas as pd
 import numpy as np
 import random
-from pathlib import Path
-from simulation.drive_selection import select_drive
+from simulation.drive_selection import select_drive, prepare_drives
 from simulation.rules import game_over, overtime_length
-import time
-from multiprocessing import Pool, cpu_count
 from config import *
+from team import Team
+import time
 
-drive_list = pd.read_csv(DATA_DIR / DRIVE_FILE)
+drive_list = prepare_drives(pd.read_csv(DATA_DIR / DRIVE_FILE))
 ko_list = pd.read_csv(DATA_DIR / KO_FILE)
 conversion_rates = pd.read_csv(DATA_DIR / CONVERSION_FILE).T[0].to_dict()
 fourth_downs = pd.read_csv(DATA_DIR / FOURTH_DOWN_FILE)
@@ -40,8 +39,8 @@ class OvertimePeriod:
 
     """
 
-    def __init__(self, team_0: str, team_1: str, kicking_team: str, season: int = 2025, goforit_2pc = False, goforit_fg = False):
-        self.teams = [team_0, team_1]
+    def __init__(self, home_team: Team, away_team: Team, kicking_team: Team, season: int = 2025, use_hfa = False, goforit_2pc = False, goforit_fg = False):
+        self.teams = [home_team, away_team]
         self.score = [0, 0]
         self.season = season
         self.kicking_team = kicking_team
@@ -58,10 +57,14 @@ class OvertimePeriod:
         self.safety_scored = False
         self.goforit_2pc = goforit_2pc
         self.goforit_fg = goforit_fg
-        self.hfa = hfas.loc[season].iloc[0]
+        self.hfa = hfas.loc[season].iloc[0] if use_hfa else 0
 
     def set_posteam(self, team_index: int):
         self.posteam = team_index
+
+    def get_matchup(self):
+        apply_hfa = 1 if self.posteam == 0 else -1
+        return self.teams[self.posteam].osrs - self.teams[int(not self.posteam)].dsrs + apply_hfa*self.hfa/2
 
     def switch_posteam(self):
         # Toggles between index 0 and 1
@@ -204,8 +207,8 @@ class OvertimePeriod:
         score_diff = self.score[self.posteam] - self.score[int(not self.posteam)]
 
         earliest_year = max(drive_list['season'].min(), self.season - DRIVE_LOOKBACK)
-        drive, candidates = select_drive(drive_list[drive_list['season'].isin(range(earliest_year, self.season+1))],
-                                         self.yardline, self.time_remaining, score_diff)
+        drive, candidates, _1, _2  = select_drive(drive_list[drive_list['season'].isin(range(earliest_year, self.season+1))],
+                                         self.yardline, self.time_remaining, score_diff, self.get_matchup())
         # if (drive['drive_result'] in ['END_GAME', 'END_HALF']
         #         and not (self.had_possession[0] and self.had_possession[1])):
         #     drive = candidates[~candidates['drive_result'].isin(['END_GAME', 'END_HALF'])].sample(1).iloc[0]
@@ -280,12 +283,17 @@ class OvertimePeriod:
             Team 1 Drives, time_remaining, OT Summary
         """
         return {
-            "Team 0": self.teams[0],
-            'Team 1': self.teams[1],
-            'Kicking Team': self.kicking_team,
+            "Home Team": self.teams[0].name,
+            'Home Team OSRS': self.teams[0].osrs,
+            'Home Team DSRS': self.teams[0].dsrs,
+            'Away Team': self.teams[1].name,
+            'Away Team OSRS': self.teams[1].osrs,
+            'Away Team DSRS': self.teams[1].dsrs,
+            'Homefield Advantage': self.hfa,
+            'Kicking Team': self.kicking_team.name,
             'Winning Team': self.get_winner(),
-            'Kicking Team Won': int(self.kicking_team == self.get_winner()),
-            'Receiving Team Won': int(self.kicking_team != self.get_winner() and self.get_winner() != 'TIE'),
+            'Kicking Team Won': int(self.kicking_team.name == self.get_winner()),
+            'Receiving Team Won': int(self.kicking_team.name != self.get_winner() and self.get_winner() != 'TIE'),
             'Tie Game': int(self.get_winner() == 'TIE'),
             f"{self.teams[0]} Score": self.score[0],
             f"{self.teams[0]} Possession Results": self.posresults[0],
@@ -299,7 +307,23 @@ class OvertimePeriod:
 
     def get_winner(self) -> str | None:
         if self.score[0] > self.score[1]:
-            return self.teams[0]
+            return self.teams[0].name
         elif self.score[1] > self.score[0]:
-            return self.teams[1]
+            return self.teams[1].name
         return 'TIE'
+
+if __name__ == '__main__':
+    team1 = Team('Team 1', 0, 0)
+    team2 = Team('Team 2', 0, 0)
+    results = []
+    n = 10000
+    start = time.perf_counter()
+    for i in range(n):
+        ot = OvertimePeriod(team1, team2, team1)
+        ot.simulate()
+        results.append(ot.result())
+        elapsed = time.perf_counter() - start
+    df = pd.DataFrame(results)
+    print(f'Ran {n}  simulations {elapsed:.2f} seconds')
+    print(f'Receiving team advanteage = {(df['Receiving Team Won'].sum()-df['Kicking Team Won'].sum())/n:.2f}')
+    df.to_csv('overtime_test.csv')
